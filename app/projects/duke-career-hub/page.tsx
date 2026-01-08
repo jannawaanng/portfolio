@@ -1,684 +1,395 @@
+"use client";
+
 import Image from "next/image";
 
-export default function DukeCareerHubPage() {
+export default function Hero() {
   return (
-    <main className="w-full bg-[#F5F3EF]">
-      {/* HERO - light, airy, Apple-ish */}
-      <section className="relative h-[480px] md:h-[500px] lg:h-[540px] overflow-hidden bg-[#F5F3EF]">
-        {/* photo */}
-        <Image
-          src="/mockup-career-hub-expanded.png"
-          alt="Duke Career Hub Full"
-          fill
-          priority
-          className="object-cover object-[0%_80%]"
-        />
-
-        {/* soft bright overlay (no dark vignette) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-transparent to-[#F5F3EF]/95 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.75)_0,transparent_45%)] pointer-events-none" />
-
-        {/* text */}
-        <div className="absolute inset-0 flex items-end">
-          <div
-            className="
-              absolute 
-              left-0
-              right-0
-              bottom-10
-              h-60 
-              bg-gradient-to-t 
-              from-[#ffe9f0]/50
-              via-[#effffa]/70
-              to-transparent 
-              pointer-events-none 
-              z-0
-            "
-          />
-          <div className="w-full max-w-7xl mx-auto px-6 pb-14 md:pb-20 drop-shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
-            <p className="text-[11.5px] md:text-[15px] px-1.5 tracking-[0.4em] uppercase text-[#162f62]  mb-1">
-              JAN–MAY 2025
-            </p>
-            <h1 className="text-5xl md:text-6xl font-extralight text-[#14526b] leading-[0.85] mb-2 tracking-tighter">
-              Duke
-              <br />
-              Career Hub
-            </h1>
-            <p className="text-base  md:text-xl px-1.5 py-1 mb-1 text-[#162f62] max-w-xl font-light">
-              Creating a Career Hub that works the way students work.
-            </p>
-          </div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20 md:py-16 bg-gradient-to-br from-[#fef5e7] via-[#f4e8cf] to-[#ffe8d6] overflow-hidden">
+      {/* Enhanced animated background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-24 -left-10 w-64 h-64 rounded-full bg-[#DDEBFF] blur-3xl opacity-70 animate-blob" />
+        <div className="absolute top-1/3 -right-16 w-56 h-56 rounded-full bg-[#F6E6FF] blur-3xl opacity-70 animate-blob animation-delay-2000" />
+        <div className="absolute bottom-[-60px] left-1/4 w-48 h-48 rounded-full bg-[#DFF7F0] blur-3xl opacity-70 animate-blob animation-delay-4000" />
+        
+        {/* Floating carrots in background */}
+        <div className="absolute top-20 left-[15%] opacity-20 animate-float-slow">
+          <div className="text-4xl">🥕</div>
         </div>
-      </section>
-
-      {/* APPLE-GLASS STATS BAR – pastel edge, more whimsy */}
-      <section className="relative -mt-12 md:-mt-20 px-10 flex justify-center">
-        <div className="max-w-4xl w-full bg-gradient-to-r from-[#ffc9d9] via-[#c2e3ff] to-[#c7f3d2] p-[1px] rounded-[26px] shadow-[0_16px_40px_rgba(0,0,0,0.16)]">
-          <div
-            className="
-              bg-white/60 backdrop-blur-xl
-              rounded-[24px]
-              px-10 py-2.5
-              flex flex-wrap items-center justify-between gap-2
-              text-[#0d365e]
-            "
-          >
-            <div className="flex items-baseline gap-1 text-xs">
-              <span className="text-lg font-light">5</span>
-              <span className="opacity-70">person team</span>
-            </div>
-
-            <div className="flex items-baseline gap-1 text-xs">
-              <span className="text-lg font-light">20+</span>
-              <span className="opacity-70">stakeholder interviews</span>
-            </div>
-
-            <div className="flex items-baseline gap-1 text-xs">
-              <span className="text-lg font-light">1</span>
-              <span className="opacity-70">High-fidelity prototype</span>
-            </div>
-          </div>
+        <div className="absolute top-[60%] right-[20%] opacity-15 animate-float-slower">
+          <div className="text-3xl rotate-45">🥕</div>
         </div>
-      </section>
-
-      {/* PROJECT FACTS – compact table-style block */}
-      <section className="bg-[#F5F3EF] border-b border-[#E0D9CE]/60">
-        <div
-          className="
-            max-w-6xl mx-auto 
-            px-6 md:px-8 py-10
-            grid grid-cols-2 md:grid-cols-4 
-            gap-y-6 gap-x-12 
-            text-left
-          "
-        >
-          {/* ROLE */}
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">
-              Role
-            </p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>UX Research Lead</li>
-              <li>Product Designer</li>
-            </ul>
-          </div>
-
-          {/* TEAM */}
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">
-              Team
-            </p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>3 Designers</li>
-              <li>1 Outreach</li>
-              <li>1 Operations</li>
-            </ul>
-          </div>
-
-          {/* SKILLS */}
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">
-              Skills
-            </p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>Cross-Functional Work</li>
-              <li>Information Architecture</li>
-              <li>Interaction Design</li>
-              <li>UX Research</li>
-            </ul>
-          </div>
-
-          {/* TOOLS */}
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">
-              Tools
-            </p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>Figma</li>
-              <li>FigJam</li>
-              <li>Hotjar</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    <div>
-    </div>
-
-   {/* CONTEXT + DESIGN PROBLEM + BUNNY ICONS */}
-<section>
-  <div className="px-6 py-6">
-  <h3 className="text-xs tracking-[0.4em] uppercase text-[#14526b] font-bold mb-6">01. Context</h3>
-    <div className="mb-20">
-      {/* LEFT: problem narrative */}
-      <h2 className="text-4xl font-extralight text-[#2C3E3A] mb-4 my-6 leading-tight">
-        Students weren&apos;t using the Career Hub.
-      </h2>
-
-      <p className="text-base text-[#5C7A6F] leading-relaxed font-light mb-10 max-w-2xl">
-        Most defaulted to pre-professional orgs, mentors, and peer circles to plan their
-        careers. The Career Hub wasn&apos;t their first stop because the experience didn&apos;t
-        articulate its value or onboard students into a clear starting point:
-      </p>
-
-      {/* PROBLEM TILES */}
-      <div className="grid md:grid-cols-3 gap-10 my-10 text-center">
-
-        {/* 1 — Overwhelming */}
-        <div className="flex flex-col items-center max-w-xs mx-auto text-center">
-          <div className="h-[130px] w-[130px]">
-            <Image
-              src="/ch-1.png"
-              alt="Overwhelmed"
-              width={150}
-              height={130}
-              className="object-cover h-full w-full object-center"
-            />
-          </div>
-          <p className="text-sm font-medium text-[#2C3E3A] leading-snug mt-2">
-            <span className="font-semibold">Dense text</span>
-            <span className="font-light"> and</span>
-            <span className="font-semibold"> unclear hierarchy</span>
-            <span className="font-light"> made the homepage </span>
-            <span className="font-semibold">overwhelming to parse</span>.
-          </p>
-        </div>
-
-        {/* 2 — Buried / no flows */}
-        <div className="flex flex-col items-center max-w-xs mx-auto text-center">
-          <div className="h-[130px] w-[120px] overflow-hidden">
-            <Image
-              src="/ch-2.png"
-              alt="Buried tasks"
-              width={200}
-              height={80}
-              className="object-cover h-full w-full object-center"
-            />
-          </div>
-          <p className="text-sm font-medium text-[#2C3E3A] leading-snug mt-2">
-            <span className="font-light">Key tasks weren&apos;t surfaced, leaving students </span>
-            <span className="font-semibold">without clear flows</span>
-            <span className="font-light"> to find core actions.</span>
-          </p>
-        </div>
-
-        {/* 3 — Unclear role */}
-        <div className="flex flex-col items-center max-w-xs mx-auto text-center">
-          <div className="h-[130px] w-[150px] overflow-hidden">
-            <Image
-              src="/ch-3.png"
-              alt="Unclear role"
-              width={100}
-              height={80}
-              className="object-cover h-full w-full object-center"
-            />
-          </div>
-          <p className="text-sm font-medium text-[#2C3E3A] leading-snug mt-2">
-            <span className="font-light">Students couldn&apos;t tell </span>
-            <span className="font-semibold">what this was meant to support</span>
-            <span className="font-light"> because exploration, advising, and resources weren&apos;t clearly organized.</span>
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* USER RESEARCH & PROCESS */}
-<section>
-  <div className="max-w-7xl mx-auto px-6 space-y-12">
-
-    {/* TOP: RESEARCH NARRATIVE + VISUALS */}
-    <div className="grid md:grid-cols-[minmax(0,1.4fr)_minmax(260px,1fr)] gap-10 items-start">
-      {/* LEFT: narrative + methods */}
-      <div>
-        <p className="text-[15px] uppercase tracking-[0.3em] text-[#14526b] mb-3">
-          User Research
-        </p>
-
-        <h2 className="text-3xl md:text-4xl font-extralight text-[#2C3E3A] mb-4 my-6 leading-tight">
-        When and why do students seek out the Career Hub?
-        </h2>
-
-        <p className="text-base text-[#5C7A6F] leading-relaxed font-light mb-4 max-w-xl">
-  I looked for pain points and user needs to find our answer. 
-</p>
-
-
-<div className="grid md:grid-cols-2 gap-6">
-
-{/* Scope */}
-<div>
-  <p className="text-[11px] uppercase tracking-[0.25em] text-[#14526b] mb-2">Scope</p>
-  <ul className="space-y-1 text-sm text-[#2C3E3A] font-medium">
-    <li>20+ student touchpoints</li>
-    <li>8 usability sessions</li>
-    <li>3 core personas</li>
-  </ul>
-</div>
-
-{/* Methods */}
-<div>
-  <p className="text-[11px] uppercase tracking-[0.25em] text-[#14526b] mb-2">Methods</p>
-  <div className="flex flex-wrap gap-3 my-3">
-    {[
-      "Card Sort","Comparative Analysis",
-      "Heatmap Analysis","Journey Mapping","Personas",
-      "Stakeholder Interviews",
-      "Student Focus Groups",
-      "Usability Testing",
-      "User Interviews",
-    ].map((tag) => (
-      <span
-        key={tag}
-        className="text-[11px] px-2.5 py-1.5 rounded-full bg-[#A8C5BA]/20 text-[#2C3E3A] border border-[#A8C5BA]/30"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-  </div>
-  </div>
-
-      {/* RIGHT: research visuals / image grid */}
-      <div className="space-y-3">
-        <div className="grid grid-cols-2 gap-3">
-
-          {/* Heatmap */}
-          <div className="bg-white/80 border border-[#D4CFC4]/60 rounded-xl p-2 flex flex-col gap-2">
-            <div className="relative w-full aspect-video rounded-md overflow-hidden">
-              <Image
-                src="/heatmap.png" // replace with Maze heatmap export
-                alt="Heatmap on Career Hub homepage"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="text-[10px] text-[#5C7A6F] font-medium uppercase tracking-[0.14em]">
-              Maze heatmaps
-            </p>
-            <p className="text-[11px] text-[#5C7A6F] font-light">
-              Clicks clustered on nav and search, not content.
-            </p>
-          </div>
-
-          {/* Card sort */}
-          <div className="bg-white/80 border border-[#D4CFC4]/60 rounded-xl p-2 flex flex-col gap-2">
-            <div className="relative w-full aspect-video rounded-md overflow-hidden">
-              <Image
-                src="/cardsort.png" 
-                alt="Card sort groups"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <p className="text-[10px] text-[#5C7A6F] font-medium uppercase tracking-[0.14em]">
-              Open card sort
-            </p>
-            <p className="text-[11px] text-[#5C7A6F] font-light">
-              Students grouped resources by &quot;where I am&quot; instead of office structure.
-            </p>
-          </div>
-
+        <div className="absolute bottom-32 left-[25%] opacity-20 animate-float">
+          <div className="text-2xl -rotate-12">🥕</div>
         </div>
       </div>
-    </div>
 
-  {/* PROCESS TIMELINE */}
-<div className="bg-[#2C3E3A] text-white rounded-2xl p-7 md:p-9">
-  <p className="text-[11px] uppercase tracking-[0.3em] text-[#A8C5BA] mb-8">
-    How we worked
+      {/* Main content - tighter, more dynamic layout */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-10 max-w-6xl w-full">
+       {/* LEFT: Text block - more compact */}
+<div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left max-w-[520px]">
+  {/* Animated speech bubble */}
+  <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/90 border-2 border-[#E2E0DA] shadow-lg mb-5 hover:scale-105 transition-transform cursor-default">
+    <span className="relative flex h-3 w-3">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8F9CF5] opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-[#8F9CF5]"></span>
+    </span>
+    <span className="text-sm font-semibold text-[#6b837b] tracking-wide">
+      HI! MY NAME IS
+    </span>
+  </div>
+
+  {/* Name with dynamic underline */}
+  <div className="relative inline-block mb-4 name-wrapper group">
+    <div className="name-underline absolute inset-x-0 bottom-2 h-5 rounded-full -z-10 group-hover:h-6 transition-all duration-300" />
+    <h1 className="relative text-[clamp(48px,8vw,72px)] font-bold tracking-tight text-[#203237] drop-shadow-sm">
+      Janna
+    </h1>
+    <span className="absolute -top-8 -right-8 text-4xl animate-wave">🐰</span>
+  </div>
+
+  {/* Role with icon */}
+  <p className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-white/95 to-[#f0f9ff]/95 border-2 border-[#E2E0DA] text-[16px] sm:text-[17px] font-semibold text-[#4A6A61] mb-6 shadow-md">
+    <span className="text-xl">✨</span>
+    product designer &amp; engineer
   </p>
 
-  <div className="grid md:grid-cols-2 gap-10 text-xs md:text-sm leading-relaxed">
+  {/* Description with highlights */}
+  <p className="text-[16px] sm:text-[18px] leading-relaxed text-[#5C7A6F] max-w-xl mb-8">
+    I love tackling design challenges through{" "}
+    <span className="inline-block px-2 py-0.5 rounded bg-[#e4f2ec] font-bold text-[#3a7a5f] hover:scale-110 transition-transform cursor-default">accessible</span>,{" "}
+    <span className="inline-block px-2 py-0.5 rounded bg-[#f6e6ff] font-bold text-[#7a3a9f] hover:scale-110 transition-transform cursor-default">intuitive</span>,{" "}
+    <span className="inline-block px-2 py-0.5 rounded bg-[#fff4e6] font-bold text-[#9f6a3a] hover:scale-110 transition-transform cursor-default">human-centered</span>{" "}
+    experiences that{" "}
+    <span className="inline-block px-2 py-0.5 rounded bg-[#ffe6f0] font-bold text-[#9f3a6a] hover:scale-110 transition-transform cursor-default">spark joy</span>!
+  </p>
 
-    {/* LEFT COLUMN */}
-    <div className="space-y-10">
-
-      {/* DISCOVER */}
-      <div>
-        <p className="text-[11.5px] uppercase tracking-widest text-[#A8C5BA] mb-3">Discover</p>
-        <div className="space-y-4">
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">01</span>
-            <p>Mapped how students use both formal and informal support across the ecosystem.
-            </p>
-          </div>
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">02</span>
-            <p>Used JTDB framework to define the core job students expect the Career Hub to fulfill.</p>
-          </div>
-        </div>
-      </div>
-
-      {/* DIAGNOSE */}
-      <div>
-        <p className="text-[11.5px] uppercase tracking-widest text-[#A8C5BA] mb-3">Diagnose</p>
-        <div className="space-y-4">
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">03</span>
-            <p>Ran usability tests to capture first-click paths, friction points, and early confusion.</p>
-          </div>
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">04</span>
-            <p>Analyzed heatmaps to validate attention patterns and highlight misleading UI cues.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    {/* RIGHT COLUMN */}
-    <div className="space-y-10">
-
-      {/* ORGANIZE */}
-      <div>
-        <p className="text-[11.5px] uppercase tracking-widest text-[#A8C5BA] mb-3">Organize</p>
-        <div className="space-y-4">
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">05</span>
-            <p>Used open card sort to rebuild the information architecture.</p>
-          </div>
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">06</span>
-            <p>Developed personas representing distinct user needs (first-timer, international students, experienced seekers with niche or industry-specific goals, etc.).</p>
-          </div>
-        </div>
-      </div>
-
-      {/* DEFINE */}
-      <div>
-        <p className="text-[11.5px] uppercase tracking-widest text-[#A8C5BA] mb-3">Define</p>
-        <div className="space-y-4">
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">07</span>
-            <p>Synthesized insights into design principles focused on clarity + guidance + actionability.</p>
-          </div>
-          <div className="flex gap-3">
-            <span className="text-xl font-extralight text-[#A8C5BA]">08</span>
-            <p>Applied those principles to redesign navigation and and make key actions more visible.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  {/* Carrot CTA */}
+  <div className="mt-2 flex justify-center md:justify-start">
+    <button
+      onClick={() => {
+        const firstCard = document.getElementById("first-project");
+        firstCard?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }}
+      className="group relative px-6 py-3 rounded-full bg-gradient-to-br from-[#ff8c42] to-[#ff6b35] text-white text-base font-bold shadow-xl hover:shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 overflow-hidden"
+    >
+      <span className="relative z-10 flex items-center gap-3">
+        <span className="text-2xl group-hover:rotate-12 transition-transform duration-300">🥕</span>
+        <span>Dig into my work</span>
+        <span className="text-xl group-hover:translate-y-1 transition-transform duration-300">↓</span>
+      </span>
+      {/* Bite effect on hover */}
+      <div className="absolute top-0 right-0 w-8 h-8 bg-[#f4e8cf] rounded-full -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    </button>
   </div>
 </div>
-</div>
-</div>
-</section>
-    
-      <section className="bg-[#F5F3EF]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
-          {/* BEFORE/AFTER - Side by side comparison */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-extralight text-[#2C3E3A] mb-8 leading-tight">
-              Before → After
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-3">
-                <div className="bg-[#E8E5DD] rounded-xl p-4 border-2 border-red-300">
-                  <p className="text-[9px] uppercase tracking-wider text-red-600 font-semibold mb-2">
-                    BEFORE
-                  </p>
-                  <div className="aspect-video bg-white/50 rounded-lg flex items-center justify-center text-sm text-[#5C7A6F]/50">
-                    [Current Homepage Screenshot]
-                  </div>
-                </div>
-                <ul className="text-sm text-[#5C7A6F] space-y-2 font-light">
-                  <li className="flex gap-2">
-                    <span className="text-red-500">✕</span> Mission-heavy hero copy
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-500">✕</span> Hidden booking flow
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-red-500">✕</span> No stage guidance
-                  </li>
-                </ul>
-              </div>
 
-              <div className="space-y-3">
-                <div className="bg-[#E8E5DD] rounded-xl p-4 border-2 border-green-300">
-                  <p className="text-[9px] uppercase tracking-wider text-green-600 font-semibold mb-2">
-                    AFTER
-                  </p>
-                  <div className="aspect-video bg-white/50 rounded-lg flex items-center justify-center text-sm text-[#5C7A6F]/50">
-                    [Redesign Screenshot]
-                  </div>
-                </div>
-                <ul className="text-sm text-[#5C7A6F] space-y-2 font-light">
-                  <li className="flex gap-2">
-                    <span className="text-green-500">✓</span> Action-first CTAs
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-green-500">✓</span> One-click advisor booking
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-green-500">✓</span> &quot;Where are you?&quot; tiles
-                  </li>
-                </ul>
+
+        {/* RIGHT: Bunny garden scene with interactive elements */}
+        <div className="flex-1 flex items-center justify-center md:justify-start md:pl-4">
+          <div className="relative w-[320px] sm:w-[360px] md:w-[400px] aspect-square">
+            {/* Glowing garden base */}
+            <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,248,220,0.98),rgba(244,232,207,0.3))] blur-sm" />
+
+            {/* Garden ground with grass */}
+            <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[85%] h-24 rounded-[100%] bg-gradient-to-b from-[#a8d5a3] to-[#7ab574] border-4 border-[#6a9f65] shadow-2xl">
+              {/* Grass tufts */}
+              <div className="absolute -top-2 left-[20%] text-xl animate-sway">🌱</div>
+              <div className="absolute -top-1 left-[40%] text-lg animate-sway-delayed">🌿</div>
+              <div className="absolute -top-2 left-[60%] text-xl animate-sway">🌱</div>
+              <div className="absolute -top-1 left-[80%] text-lg animate-sway-delayed">🌿</div>
+            </div>
+
+            {/* Bunny on the garden - larger, more prominent */}
+            <div className="absolute left-1/2 bottom-1/4 -translate-x-1/2 translate-y-[-45%] z-20 bunny-hop cursor-pointer hover:scale-110 transition-transform">
+              <div className="relative w-32 h-32 md:w-36 md:h-36">
+                <Image
+                  src="/bunny-moon.png"
+                  alt="Bunny in the garden"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                />
               </div>
             </div>
-          </div>
 
-          {/* HEATMAP INSIGHT - Visual callout */}
-          <div className="mb-20 bg-gradient-to-br from-[#8BA89E]/10 to-[#A8C5BA]/10 rounded-2xl p-8 border border-[#D4CFC4]/40">
-            <div className="grid md:grid-cols-[1fr_400px] gap-8 items-center">
-              <div>
-                <p className="text-[9px] uppercase tracking-wider text-[#8BA89E] mb-3">
-                  HEATMAP FINDING
-                </p>
-                <h3 className="text-3xl font-extralight text-[#2C3E3A] mb-4 leading-tight">
-                  Students only clicked search &amp; nav—not content
-                </h3>
-                <p className="text-sm text-[#5C7A6F] font-light leading-relaxed">
-                  Maze heatmaps showed 78% of clicks on the header navigation and search bar. The
-                  hero content? Nearly zero interaction. Students were looking for shortcuts, not
-                  reading mission statements.
-                </p>
-              </div>
-              <div className="aspect-square bg-gradient-to-br from-red-500/20 via-yellow-500/20 to-green-500/20 rounded-xl flex items-center justify-center text-xs text-[#5C7A6F]/50">
-                [Heatmap Visualization]
+            {/* Carrots growing around - interactive */}
+            <div className="absolute top-[35%] left-[15%] carrot-grow cursor-pointer hover:scale-125 hover:-translate-y-2 transition-all group">
+              <div className="text-4xl drop-shadow-lg">🥕</div>
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 px-2 py-1 rounded text-xs font-bold text-[#ff6b35] whitespace-nowrap shadow-lg">
+                Fresh!
               </div>
             </div>
-          </div>
-
-          {/* RESEARCH INSIGHTS - 3 column tight */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-extralight text-[#2C3E3A] mb-8 leading-tight">
-              What 20+ students told us
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Overwhelming first impression",
-                  quote: '"I know this is important, but I don\'t know what to click"',
-                  points: ["Mission copy, not actions", "Students bounced to org sites"],
-                },
-                {
-                  title: "Hidden core tasks",
-                  quote: '"It took me 4 clicks to book an advisor"',
-                  points: ["Handshake wasn&apos;t visible", "Most interaction on search only"],
-                },
-                {
-                  title: "Stage matters most",
-                  quote: '"I need \'where to start\' not \'our mission\'"',
-                  points: ["Card sorts grouped by stage", "Org sites already did this well"],
-                },
-              ].map((insight, i) => (
-                <div
-                  key={i}
-                  className="bg-white/60 border border-[#D4CFC4]/30 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#A8C5BA] to-[#8BA89E] text-white flex items-center justify-center text-sm font-light mb-4">
-                    {i + 1}
-                  </div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wide text-[#2C3E3A] mb-3">
-                    {insight.title}
-                  </h3>
-                  <p className="text-sm italic text-[#5C7A6F]/80 mb-4 leading-snug">
-                    {insight.quote}
-                  </p>
-                  <ul className="space-y-2 text-xs text-[#5C7A6F] font-light">
-                    {insight.points.map((point, j) => (
-                      <li key={j} className="flex gap-2">
-                        <span className="text-[#A8C5BA]">→</span>
-                        <span dangerouslySetInnerHTML={{ __html: point }} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            
+            <div className="absolute top-[45%] right-[12%] carrot-grow animation-delay-1000 cursor-pointer hover:scale-125 hover:-translate-y-2 transition-all group">
+              <div className="text-4xl drop-shadow-lg rotate-12">🥕</div>
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 px-2 py-1 rounded text-xs font-bold text-[#ff6b35] whitespace-nowrap shadow-lg">
+                Yum!
+              </div>
             </div>
-          </div>
-
-          {/* WHAT WE REDESIGNED - Feature grid */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-extralight text-[#2C3E3A] mb-8 leading-tight">
-              What we redesigned
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  feature: "Hero Section",
-                  from: "Mission statement wall of text",
-                  to: "3 action CTAs: Book advisor, Explore paths, Find jobs",
-                  impact: "Direct path to top tasks in 1 click",
-                },
-                {
-                  feature: "Navigation",
-                  from: "Office org chart structure",
-                  to: "Career stage grouping: Exploring → Applying → Prepping",
-                  impact: "Matches how students think",
-                },
-                {
-                  feature: "Content Layout",
-                  from: "One giant resource dump",
-                  to: "Three rails: Events, Guides, Communities",
-                  impact: "Clear, scannable spine",
-                },
-                {
-                  feature: "Visual Language",
-                  from: "Building photos + logos",
-                  to: "Student faces + conversational copy",
-                  impact: "Borrowed trust from org sites",
-                },
-              ].map((item, i) => (
-                <div key={i} className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-[#A8C5BA]/20 to-[#8BA89E]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative bg-white/80 border border-[#D4CFC4]/30 rounded-2xl p-6">
-                    <h3 className="text-base font-semibold text-[#2C3E3A] mb-4">
-                      {item.feature}
-                    </h3>
-                    <div className="space-y-3 text-xs">
-                      <div>
-                        <p className="text-[#8BA89E] uppercase tracking-wider mb-1">From</p>
-                        <p className="text-[#5C7A6F] font-light">{item.from}</p>
-                      </div>
-                      <div>
-                        <p className="text-[#8BA89E] uppercase tracking-wider mb-1">To</p>
-                        <p className="text-[#5C7A6F] font-light">{item.to}</p>
-                      </div>
-                      <div className="pt-2 border-t border-[#D4CFC4]/30">
-                        <p className="text-[#2C3E3A] font-medium">{item.impact}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            
+            <div className="absolute bottom-[22%] left-[25%] carrot-grow animation-delay-2000 cursor-pointer hover:scale-125 hover:-translate-y-2 transition-all group">
+              <div className="text-3xl drop-shadow-lg -rotate-6">🥕</div>
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 px-2 py-1 rounded text-xs font-bold text-[#ff6b35] whitespace-nowrap shadow-lg">
+                Crispy!
+              </div>
             </div>
-          </div>
 
-          {/* DESIGN PRINCIPLES - Pull quote style */}
-          <div className="mb-20 bg-[#2C3E3A] text-white rounded-2xl p-10">
-            <p className="text-[8px] uppercase tracking-[0.3em] text-[#A8C5BA] mb-6">
-              Design Principles
-            </p>
-            <div className="grid md:grid-cols-3 gap-8 text-sm">
-              {[
-                ["Action over explanation", "Show what to do, not why we exist"],
-                ["Stage-based guidance", "Meet students where they are"],
-                ["Borrowed familiarity", "Use patterns students already trust"],
-              ].map(([title, desc], i) => (
-                <div key={i}>
-                  <p className="text-2xl font-extralight text-[#A8C5BA] mb-2">0{i + 1}</p>
-                  <p className="font-semibold mb-2">{title}</p>
-                  <p className="text-white/70 text-xs font-light">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+            {/* Flowers and details */}
+            <div className="absolute top-[28%] left-[35%] text-2xl animate-float">🌸</div>
+            <div className="absolute top-[38%] right-[30%] text-xl animate-float-slower">🌼</div>
+            <div className="absolute bottom-[35%] left-[42%] text-lg animate-float-slow">🌺</div>
 
-          {/* PERSONAS - Horizontal cards */}
-          <div className="mb-20">
-            <h2 className="text-4xl font-extralight text-[#2C3E3A] mb-8 leading-tight">
-              Designed for real students
-            </h2>
-            <div className="space-y-4">
-              {[
-                [
-                  "Sierra",
-                  "First-timer",
-                  "First-gen, undecided major. Needs one clear starting point, not five tabs.",
-                  "#A8C5BA",
-                ],
-                [
-                  "Bo",
-                  "International",
-                  "Visa limits, family expectations. Needs tailored guidance paths.",
-                  "#8BA89E",
-                ],
-                [
-                  "Jake",
-                  "Experienced",
-                  "Great internships, few offers. Needs positioning strategy, not templates.",
-                  "#B8D4C8",
-                ],
-              ].map(([name, type, desc, color], i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-5 bg-white/60 border border-[#D4CFC4]/30 rounded-xl p-6 hover:bg-white hover:shadow-md transition-all duration-300"
-                >
-                  <div
-                    className="w-16 h-16 rounded-2xl flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${color}, ${color}99)` }}
-                  />
-                  <div className="flex-1">
-                    <div className="flex items-baseline gap-3 mb-2">
-                      <h3 className="text-lg font-semibold text-[#2C3E3A]">{name}</h3>
-                      <span className="text-[9px] uppercase tracking-wider text-[#8BA89E]">
-                        {type}
-                      </span>
-                    </div>
-                    <p className="text-sm text-[#5C7A6F] font-light leading-relaxed">
-                      {desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+            {/* Floating sparkles */}
+            <StarDot className="top-12 left-20" delay="0s" size="sm" />
+            <StarDot className="top-16 right-16" delay="0.3s" size="xs" />
+            <StarDot className="top-[45%] left-8" delay="0.6s" size="sm" />
+            <StarDot className="top-[55%] right-12" delay="0.9s" size="xs" />
+            <StarDot className="bottom-28 left-16" delay="1.2s" size="sm" />
+            <StarDot className="bottom-20 right-20" delay="1.5s" size="xs" />
 
-          {/* REFLECTION - Editorial close */}
-          <div className="border-t border-[#D4CFC4]/40 pt-12">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl font-extralight text-[#2C3E3A] mb-4 leading-tight">
-                What I&apos;d do next
-              </h2>
-              <p className="text-base text-[#5C7A6F] font-light leading-relaxed mb-4">
-                This was a crash course in treating a university service like a product. Given
-                another semester, I&apos;d prototype in production, A/B test the hero CTAs, and
-                co-design with pre-professional org leaders.
-              </p>
-              <p className="text-base text-[#5C7A6F] font-light leading-relaxed">
-                The goal: make the &quot;official&quot; Career Hub and the places students
-                actually go feel like one continuous experience.
-              </p>
-            </div>
+            {/* Design process labels - repositioned */}
+            <ConstellationLabel
+              label="🔍 research"
+              className="absolute top-8 left-1/2 -translate-x-1/2"
+            />
+            <ConstellationLabel
+              label="✏️ design"
+              className="absolute top-1/2 -left-20 -translate-y-1/2"
+            />
+            <ConstellationLabel
+              label="🚀 build"
+              className="absolute bottom-12 right-0"
+            />
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+
+      {/* Enhanced Animations */}
+      <style jsx global>{`
+        /* Blob animation */
+        @keyframes blob {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+
+        /* Floating animations */
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(5deg);
+          }
+        }
+        @keyframes float-slow {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-15px) rotate(-3deg);
+          }
+        }
+        @keyframes float-slower {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(3deg);
+          }
+        }
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+        .animate-float-slow {
+          animation: float-slow 5s ease-in-out infinite;
+        }
+        .animate-float-slower {
+          animation: float-slower 6s ease-in-out infinite;
+        }
+
+        /* Wave animation for bunny emoji */
+        @keyframes wave {
+          0%, 100% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(15deg);
+          }
+          75% {
+            transform: rotate(-15deg);
+          }
+        }
+        .animate-wave {
+          animation: wave 2s ease-in-out infinite;
+          transform-origin: 70% 70%;
+        }
+
+        /* Bunny hop */
+        @keyframes bunny-hop {
+          0%, 100% {
+            transform: translate(-50%, -45%) translateY(0) rotate(-2deg);
+          }
+          50% {
+            transform: translate(-50%, -45%) translateY(-12px) rotate(2deg);
+          }
+        }
+        .bunny-hop {
+          animation: bunny-hop 3s ease-in-out infinite;
+        }
+
+        /* Carrot growing animation */
+        @keyframes carrot-grow {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg) scale(1);
+          }
+          50% {
+            transform: translateY(-5px) rotate(3deg) scale(1.05);
+          }
+        }
+        .carrot-grow {
+          animation: carrot-grow 4s ease-in-out infinite;
+        }
+        .animation-delay-1000 {
+          animation-delay: 1s;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+
+        /* Grass sway */
+        @keyframes sway {
+          0%, 100% {
+            transform: rotate(-3deg);
+          }
+          50% {
+            transform: rotate(3deg);
+          }
+        }
+        @keyframes sway-delayed {
+          0%, 100% {
+            transform: rotate(3deg);
+          }
+          50% {
+            transform: rotate(-3deg);
+          }
+        }
+        .animate-sway {
+          animation: sway 3s ease-in-out infinite;
+          transform-origin: bottom;
+        }
+        .animate-sway-delayed {
+          animation: sway-delayed 3s ease-in-out infinite;
+          transform-origin: bottom;
+        }
+
+        /* Star twinkle */
+        @keyframes star-twinkle {
+          0%, 100% {
+            opacity: 0.4;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.4);
+          }
+        }
+        .star-twinkle {
+          animation: star-twinkle 2.5s ease-in-out infinite;
+        }
+
+        /* Dynamic name */
+        @keyframes name-breathe {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-3px);
+          }
+        }
+        .name-wrapper h1 {
+          animation: name-breathe 4s ease-in-out infinite;
+        }
+
+        .name-underline {
+          background: linear-gradient(90deg, #ffd6e8, #e4f2ec, #f6e6ff, #fff4e6, #ffd6e8);
+          background-size: 200% 100%;
+          animation: underline-shimmer 8s ease-in-out infinite;
+        }
+        @keyframes underline-shimmer {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        /* Chip float - gentler */
+        @keyframes chip-float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+        }
+        .chip-float-inner {
+          animation: chip-float 5s ease-in-out infinite;
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* Enhanced constellation-style label with emoji */
+type ConstellationProps = {
+  label: string;
+  className?: string;
+};
+
+function ConstellationLabel({ label, className = "" }: ConstellationProps) {
+  return (
+    <div className={`chip-float-inner ${className}`}>
+      <div className="flex items-center gap-2 hover:scale-110 transition-transform cursor-default">
+        <span className="h-1.5 w-1.5 rounded-full bg-[#ffd700] star-twinkle shadow-lg" />
+        <span className="h-[2px] w-8 bg-gradient-to-r from-[#ffd700] to-[#E9D9AA]" />
+        <span className="rounded-full bg-white/98 border-2 border-[#E7E0D3] px-4 py-2 text-[12px] sm:text-[13px] font-bold text-[#5C7A6F] shadow-[0_10px_20px_rgba(44,68,60,0.12)] whitespace-nowrap hover:shadow-[0_12px_24px_rgba(44,68,60,0.18)] transition-shadow">
+          {label}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* Enhanced star dots with glow */
+type StarProps = {
+  className?: string;
+  delay?: string;
+  size?: "xs" | "sm";
+};
+
+function StarDot({ className = "", delay = "0s", size = "xs" }: StarProps) {
+  const dimension = size === "sm" ? "h-2 w-2" : "h-1.5 w-1.5";
+  return (
+    <div
+      className={`absolute ${dimension} rounded-full bg-gradient-to-br from-[#ffd700] to-[#F7D18F] star-twinkle shadow-lg ${className}`}
+      style={{ animationDelay: delay }}
+    />
   );
 }
