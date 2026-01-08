@@ -75,7 +75,7 @@ export default function DukeCareerHubPage() {
 
             <div className="flex items-baseline gap-1 text-xs">
               <span className="text-lg font-light">1</span>
-              <span className="opacity-70">comprehensive redesign</span>
+              <span className="opacity-70">High-fidelity prototype</span>
             </div>
           </div>
         </div>
@@ -147,9 +147,7 @@ export default function DukeCareerHubPage() {
    {/* CONTEXT + DESIGN PROBLEM + BUNNY ICONS */}
 <section>
   <div className="px-6 py-6">
-  <p className="text-[15px] uppercase tracking-[0.3em] text-[#14526b] my-6">
-          Context
-        </p>
+  <h3 className="text-xs tracking-[0.4em] uppercase text-[#14526b] font-bold mb-6">01. Context</h3>
     <div className="mb-20">
       {/* LEFT: problem narrative */}
       <h2 className="text-4xl font-extralight text-[#2C3E3A] mb-4 my-6 leading-tight">
