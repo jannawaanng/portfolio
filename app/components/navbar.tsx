@@ -1,20 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Linkedin } from "lucide-react";
 
 const NAV_LINKS = [
-  { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about-me", label: "About Me!", isExternal: false },
+  // Resume is a file, so we treat it as external to avoid routing errors
+  { href: "/janna-wang-resume.pdf", label: "Resume", target: "_blank", isExternal: true }, 
+  // Mailto must be external
+  { href: "mailto:janna.wang@duke.edu", label: "Contact", isExternal: true },
 ];
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#F6F0E3]/20 border-b border-[#E3DAD0]/0">
       <div className="mx-auto max-w-6xl px-4 md:px-6 py-3 flex justify-center">
-        {/* pill / search-bar nav */}
         <div
           className="
             flex items-center gap-3 md:gap-6
@@ -27,13 +27,12 @@ export default function Navbar() {
             min-h-[3rem]
           "
         >
-          {/* LOGO (no JANNA text) */}
+          {/* LOGO */}
           <Link
               href="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2 group cursor-pointer"
               aria-label="Back to homepage"
             >
-              {/* plain img so it never disappears */}
               <img
                 src="/logo.jpg"
                 alt="Janna logo"
@@ -45,29 +44,36 @@ export default function Navbar() {
               />
           </Link>
 
-          {/* LINKS (center, wrap on small screens) */}
+          {/* LINKS */}
           <div className="flex flex-1 items-center justify-center flex-wrap gap-3 md:gap-5 text-[13px] text-[#4A6A61]">
-            {NAV_LINKS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="
-                  inline-flex items-center gap-1.5
-                  px-2.5 py-1 rounded-full
-                  hover:bg-white
-                  transition-all duration-200
-                  hover:text-[#203237]
-                "
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F7D18F]" />
-                <span>{item.label}</span>
-              </a>
-            ))}
+            {NAV_LINKS.map((item) => {
+              // Logic: Use <a> for email/pdf, <Link> for pages
+              const Component = item.isExternal ? 'a' : Link;
+              
+              return (
+                <Component
+                  key={item.href}
+                  href={item.href}
+                  target={item.target} 
+                  className="
+                    inline-flex items-center gap-1.5
+                    px-2.5 py-1 rounded-full
+                    hover:bg-white
+                    transition-all duration-200
+                    hover:text-[#203237]
+                    cursor-pointer
+                  "
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#F7D18F]" />
+                  <span>{item.label}</span>
+                </Component>
+              );
+            })}
           </div>
 
-          {/* LINKEDIN ICON (right) */}
+          {/* LINKEDIN ICON */}
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/jannawang2005" 
             target="_blank"
             rel="noopener noreferrer"
             className="
