@@ -33,7 +33,7 @@ export default function DukeCareerHubPage() {
 
       {/* ============ STATS BAR ============ */}
       <section className="relative -mt-12 md:-mt-16 px-6 flex justify-center">
-        <div className="max-w-4xl w-full bg-gradient-to-r from-[#ffc9d9] via-[#c2e3ff] to-[#c7f3d2] p-[1px] rounded-[24px] shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
+        <div className="max-w-5xl w-full bg-gradient-to-r from-[#ffc9d9] via-[#c2e3ff] to-[#c7f3d2] p-[1px] rounded-[24px] shadow-[0_12px_32px_rgba(0,0,0,0.12)]">
           {/* CHANGED: justify-between -> justify-center, and increased gap (gap-8 md:gap-16) */}
           <div className="bg-white/70 backdrop-blur-xl rounded-[22px] px-8 py-3 flex flex-wrap items-center justify-center gap-8 md:gap-20 text-[#0d365e]">
             {[
@@ -277,7 +277,7 @@ export default function DukeCareerHubPage() {
               </p>
               <div className="grid grid-cols-2 gap-4 text-xs">
                 <div className="bg-[#F5F3EF] rounded-lg p-3">
-                  <p className="text-2xl font-extralight text-[#14526b]">75%</p>
+                  <p className="text-2xl font-extralight text-[#14526b]">76%</p>
                   <p className="text-[#5C7A6F]">found homepage text overwhelming</p>
                 </div>
                 <div className="bg-[#F5F3EF] rounded-lg p-3">
@@ -402,7 +402,7 @@ export default function DukeCareerHubPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b-2 border-dashed border-[#d4cfc4]">
               <div>
                 <h3 className="text-xl font-semibold text-[#001A57]">Duke Career Hub Card Sort Analysis</h3>
-                <p className="text-sm text-[#5C7A6F]">Open card sort · 8 participants · 124 cards · OptimalSort</p>
+                <p className="text-sm text-[#5C7A6F]">Open card sort · 8 participants · 124 cards</p>
               </div>
               <div className="flex gap-2">
                 {[
@@ -421,21 +421,6 @@ export default function DukeCareerHubPage() {
                     </span>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* The Question */}
-            <div className="bg-[#001A57] text-white rounded-xl p-5 mb-8">
-              <p className="text-[10px] uppercase tracking-wider text-[#A8C5BA] mb-2">Research Question</p>
-              <p className="text-lg font-light mb-4">
-                Should we test the existing internal categories, current website nav, or propose new categories?
-              </p>
-              <div className="bg-white/10 rounded-lg p-4">
-                <p className="text-sm font-semibold text-[#A8C5BA] mb-2">Answer: Test PROPOSED categories</p>
-                <p className="text-xs text-white/80">
-                  Existing categories have fundamental UX problems. Proposed structure combines best elements 
-                  of both + research insights showing Career Communities is essential (8/8 agreement).
-                </p>
               </div>
             </div>
 

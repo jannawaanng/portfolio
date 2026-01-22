@@ -23,7 +23,8 @@ const projects: Project[] = [
     timeline: "MAY – AUG 2025",
     image: "", 
     slug: "unlockedmaps",
-    role: "",
+    highlight: "Transit Accessibility",
+    role: "UX / UI · Frontend Engineering",
   },
   {
     title: "Duke Career Hub",
@@ -34,13 +35,13 @@ const projects: Project[] = [
     role: "UX / UI · User Research",
   },
   {
-    title: "lunch",
-    subtitle: "",
+    title: "Modular Trays for Durham Public Schools",
+    subtitle: "Designed and patented modular, reusable lunch tray system to improve student dining experience and cafeteria logistics.",
     timeline: "AUG 2023 – APR 2024",
-    image: "", 
+    image: "/lb-top.png", 
     slug: "lunch-bunch",
     role: "Mechanical Design",
-    customUrl: "/frc-engineering.jpg",
+    highlight: "Human-Centered Design"
     
   },
   {
@@ -50,7 +51,7 @@ const projects: Project[] = [
     image: "", 
     slug: "project-tadpole",
     role: "Accessibility Engineering",
-    highlight: "Mechanical · Electrical",
+    highlight: "Mechatronics",
     customUrl: "/project-tadpole-mat.pdf",
     note: "The linked file documents our Modular Sensory Mat, a tactile therapy device with interchangeable 3D-printed tiles.", 
   },
@@ -61,6 +62,7 @@ const projects: Project[] = [
     image: "", 
     slug: "frc-engineering",
     role: "Mechanical Design",
+    highlight: "Robotics",
     customUrl: "/frc-engineering.jpg",
     // Clarifies that the doc is scoped to your specific work
     note: "The linked file hightlights subsystems and components I designed/fabricated during my time with FRC.",
