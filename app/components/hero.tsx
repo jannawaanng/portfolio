@@ -68,7 +68,7 @@ export default function Hero() {
         </div>
 
         {/* PLANET 2 - Violet */}
-        <div className="absolute animate-float-planet-slow top-[40%] right-[10%] sm:top-[74%] sm:left-[17%]" style={{ animationDelay: '2s' }}>
+        <div className="absolute animate-float-planet-slow top-[40%] right-[10%] md:top-[74%] sm:left-[17%]" style={{ animationDelay: '2s' }}>
           <svg width="120" height="120" viewBox="0 0 55 55">
             <defs>
               <radialGradient id="planet2-base" cx="35%" cy="35%" r="60%">

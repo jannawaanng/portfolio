@@ -13,7 +13,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#F6F0E3]/20 border-b border-[#E3DAD0]/0">
+    <nav className="fixed top-0 left-0 w-full z-50">
       <div className="mx-auto max-w-6xl px-4 md:px-6 py-3 flex justify-center">
         <div
           className="
@@ -22,7 +22,7 @@ export default function Navbar() {
             rounded-full
            bg-[#f9f2e1]
             border border-[#E3DAD0]
-            shadow-[0_10px_28px_rgba(32,50,55,0.10)]
+            shadow-[0_10px_28px_rgba(30,20,20,.1)]
             px-4 md:px-6
             min-h-[3rem]
           "

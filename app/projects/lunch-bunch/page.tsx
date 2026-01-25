@@ -2,32 +2,31 @@ import Image from "next/image";
 
 export default function LunchPage() {
   return (
-    <main className="w-full bg-[#F5F3EF]">
-      <section className="relative xs:h-[320px] h-[430px] md:h-[560px] lg:h-[550px] overflow-hidden bg-[#F5F3EF]">
+    <main className="w-full bg-[#cfc7b2]">
+      <section className="relative xs:h-[320px] h-[430px] md:h-[460px] lg:h-[450px] overflow-hidden bg-[#F5F3EF]">
         <Image
-          src="/lb-top.png"
+          src="/lb-top-head.png"
           alt="lunch-header"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
         />
 
         {/* soft bright overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-[#F5F3EF]/95 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.75)_0,transparent_45%)] pointer-events-none" />
-
+        <div className="absolute inset-0 bg-gradient-to-b from-[#314a3c]/0 via-transparent to-[#ffffff]/95 pointer-events-none" />
+     
  
         {/* text */}
         <div className="absolute inset-0 flex items-end">
-          <div className="absolute left-0 right-0 bottom-0 h-60 bg-gradient-to-t from-[#def2f9]/70 via-[#fff9fd]/80 to-transparent pointer-events-none z-0" />
-          <div className="w-full max-w-7xl mx-auto px-6 pb-8 md:pb-12 drop-shadow-[0_8px_20px_rgba(0,0,0,0.25)] relative z-10">
-            <p className="text-[11.5px] md:text-[15px] px-1.5 tracking-[0.4em] uppercase text-[#3a4f7d] mb-2 font-semibold">
+          <div className="absolute left-0 right-0 bottom-10 h-64 bg-gradient-to-t from-[#fff9ef]/70 via-[#fff4e3]/95 to-transparent pointer-events-none z-0" />
+          <div className="w-full max-w-xl md:max-w-6xl mx-auto px-6 pb-16 md:pb-24 drop-shadow-[0_8px_20px_rgba(0,0,0,0.25)] relative z-10">
+            <p className="text-[11.5px] md:text-[13px] px-1.5 tracking-[0.4em] uppercase text-[#4b6460] mb-3 font-semibold">
               AUG 2023–MAY 2024
             </p>
-            <h1 className="text-4xl md:text-5xl font-light text-[#577e77] leading-[0.85] mb-2 tracking-tighter">
+            <h1 className="text-3xl md:text-4xl font-light text-[#9b6872] leading-[0.85] mb-2 tracking-tighter">
               Modular Trays for Durham Public Schools
             </h1>
-            <p className="text-base md:text-xl px-1.5 py-1 mb-1 text-[#3b4f78] max-w-5xl">
+            <p className="text-sm md:text-lg px-1.5 py-1 text-[#2b4a37] max-w-5xl">
               Reusable mealware with an interlocking mechanism, designed to reduce
               lunch-line congestion and support a wider range of offerings in Durham cafeterias.
             </p>
@@ -35,81 +34,96 @@ export default function LunchPage() {
         </div>
       </section>
 
-      {/* APPLE-GLASS STATS BAR */}
-      <section className="relative z-10 -mt-6 md:-mt-8 px-10 flex justify-center">
-        <div className="max-w-5xl w-full bg-gradient-to-r from-[#ffc9d9] via-[#c2e3ff] to-[#c7f3d2] p-[1px] rounded-[26px] shadow-[0_16px_40px_rgba(0,0,0,0.16)]">
-          <div className="bg-white/60 backdrop-blur-xl rounded-[24px] px-10 py-2.5 flex flex-wrap items-center justify-between gap-2 text-[#0d365e]">
-            <div className="flex items-baseline gap-1 text-xs">
-              <span className="text-lg font-light">1</span>
-              <span className="opacity-70">provisional patent</span>
-            </div>
-            <div className="flex items-baseline gap-1 text-xs">
-              <span className="text-lg font-light">$3K+</span>
-              <span className="opacity-70">in grants + funding</span>
-            </div>
-            <div className="flex items-baseline gap-1 text-xs">
-              <span className="text-lg font-light">50+</span>
-              <span className="opacity-70">schools targeted</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* PROJECT FACTS */}
-      <section className="relative bg-[#F5F3EF] border-b border-[#E0D9CE]/60 overflow-hidden">
-        {/* doodles */}
-        <div className="pointer-events-none absolute inset-0">
-          <svg className="absolute top-6 right-[5%] w-8 h-3 text-[#D4E3F4] opacity-40" viewBox="0 0 32 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-            <path d="M2 6 Q8 2, 14 6 T26 6"/>
-          </svg>
-          <svg className="absolute bottom-6 left-[6%] w-4 h-4 text-[#CDE9BB] opacity-35" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M3 3 L13 13 M13 3 L3 13"/>
-          </svg>
-        </div>
+{/* PROJECT FACTS & SCRAPBOOK GALLERY */}
+<section className="-my-10 md:-my-16 relative bg-[#F5F3EF]">
+  
+  {/* SCRAPBOOK DOODLES - No star, just clean geometric/abstract doodles */}
+  <div className="pointer-events-none absolute inset-0">
+     <svg className="absolute bottom-20 right-[5%] w-16 h-8 text-[#c2e3ff] opacity-40 -rotate-12" viewBox="0 0 40 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M2 8 Q10 2, 18 8 T34 8"/></svg>
+     <svg className="absolute top-6 right-[8%] w-8 h-3 text-[#D4E3F4] opacity-40" viewBox="0 0 32 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M2 6 Q8 2, 14 6 T26 6"/></svg>
+     <svg className="absolute bottom-10 left-[10%] w-6 h-6 text-[#CDE9BB] opacity-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 5V19M5 12H19"/></svg>
+  </div>
 
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-10 grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-12 text-left">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">Role</p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>CAD Modeling &amp; Prototyping</li>
-              <li>Materials Research</li>
-              <li>Product Development</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">Team</p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>5 Engineers</li>
-              <li>3 Faculty Advisors</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">Skills</p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>Cross-Functional Teamwork</li>
-              <li>Entrepreneurship</li>
-              <li>Injection Mold DFM</li>
-              <li>Iterative Design</li>
-              <li>Rapid Prototyping</li>
-              <li>User Research</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-1">Tools</p>
-            <ul className="text-sm text-[#2C3E3A] font-medium space-y-1">
-              <li>3D Printer</li>
-              <li>CNC Router</li>
-              <li>Fusion 360</li>
-              <li>Laser Cutter</li>
-              <li>Onshape</li>
-            </ul>
-          </div>
+  <div className="max-w-xl md:max-w-6xl mx-auto px-6 md:px-8">
+    
+    {/* SCRAPBOOK IMAGES - Wide, offset color blocks */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+      
+      {/* Photo 1: Expo Showcase */}
+      <div className="relative group">
+        <div className="absolute inset-0 bg-[#CDE9BB] rounded-[40px] translate-x-4 translate-y-4 opacity-40  transition-transform duration-500"></div>
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-8 bg-[#ffc9d9]/60 backdrop-blur-sm z-20 -rotate-2 border border-white/20"></div>
+        
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] border-4 border-white shadow-sm bg-white transition-all hover:shadow-md">
+          <img 
+            src="/lb-expo.jpg" 
+            alt="Expo Showcase" 
+            className="w-full h-full object-cover" 
+          />
         </div>
-      </section>
+      </div>
 
+      {/* Photo 2: Patent/Prototype */}
+      <div className="relative group">
+        <div className="absolute inset-0 bg-[#E6BBC5] rounded-[40px] translate-x-4 translate-y-4 opacity-40 transition-transform duration-500"></div>
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-8 bg-[#8ab597]/70 backdrop-blur-sm z-20 rotate-3 border border-white/20"></div>
+
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] border-4 border-white shadow-sm bg-white transition-all hover:shadow-md">
+          <img 
+            src="/lb-patent.jpg" 
+            alt="Patent Details" 
+            className="w-full h-full object-cover" 
+          />
+        </div>
+      </div>
+    </div>
+
+    {/* PROJECT FACTS GRID - Original Writing + Colored Bullet Points */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-12 text-left relative z-10">
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-4">Role</p>
+        <ul className="text-[13px] text-[#2C3E3A] font-medium space-y-2">
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#ffc9d9]"></span>CAD Modeling &amp; Prototyping</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#ffc9d9]"></span>Materials Research</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#ffc9d9]"></span>Product Development</li>
+        </ul>
+      </div>
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-4">Team</p>
+        <ul className="text-[13px] text-[#2C3E3A] font-medium space-y-2">
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c2e3ff]"></span>5 Engineers</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c2e3ff]"></span>3 Faculty Advisors</li>
+        </ul>
+      </div>
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-4">Skills</p>
+        <ul className="text-[13px] text-[#2C3E3A] font-medium space-y-2">
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c7f3d2]"></span>Cross-Functional Teamwork</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c7f3d2]"></span>Entrepreneurship</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c7f3d2]"></span>Injection Mold DFM</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c7f3d2]"></span>Iterative Design</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c7f3d2]"></span>Rapid Prototyping</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#c7f3d2]"></span>User Research</li>
+        </ul>
+      </div>
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-[#8C8173] mb-4">Tools</p>
+        <ul className="text-[13px] text-[#2C3E3A] font-medium space-y-2">
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#f3e3c7]"></span>3D Printer</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#f3e3c7]"></span>CNC Router</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#f3e3c7]"></span>Fusion 360</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#f3e3c7]"></span>Laser Cutter</li>
+          <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-[#f3e3c7]"></span>Onshape</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
       {/* CONTEXT + DESIGN PROBLEM */}
       <section className="relative px-6 py-20 bg-gradient-to-b from-[#F5F3EF] to-[#F8FAFD] overflow-hidden">
         {/* doodles */}
+        
         <div className="pointer-events-none absolute inset-0">
           <svg className="absolute top-16 left-[4%] w-6 h-5 text-[#E6BBC5] opacity-40" viewBox="0 0 24 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 10 L16 10 M12 5 L16 10 L12 15"/>
