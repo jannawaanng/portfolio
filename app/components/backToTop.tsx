@@ -36,12 +36,12 @@ export default function BackToTop() {
       }
       aria-label="Back to top"
       className="
-        fixed bottom-4 right-2
+        fixed bottom-3 right-3
         z-[9999]
         h-16 w-16
         bg-transparent
         group
-        transition-transform duration-200
+        transition-transform duration-50
         hover:scale-105 active:scale-95  /* bunny + arrow scale together */
       "
     >
@@ -50,7 +50,7 @@ export default function BackToTop() {
         <div
           className="
             absolute inset-0
-            bg-[#82a3c6]
+            bg-[#69639f]
             backdrop-blur-md
           "
           style={BUNNY_MASK}
@@ -59,10 +59,10 @@ export default function BackToTop() {
         {/* FILLED BUNNY */}
         <div
           className="
-            absolute inset-[4px]
-            bg-[#95b8d3]
-            group-hover:bg-[#a0c6e4]
-            transition-colors duration-300
+            absolute inset-[2px]
+            bg-[#8d7cbf]
+            group-hover:bg-[#a082d8]
+            transition-colors duration-200
           "
           style={BUNNY_MASK}
         />

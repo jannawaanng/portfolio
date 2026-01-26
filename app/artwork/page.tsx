@@ -18,7 +18,7 @@ export default function Artwork() {
             ✿ Portfolio
           </p>
           <h1 className="text-3xl md:text-4xl font-light text-[#5c4a3d]">
-            Selected <span className="italic font-serif text-[#c4a882]">Works</span>
+            Works <span className="italic font-serif text-[#c4a882]">By Me!</span>
           </h1>
         </div>
 

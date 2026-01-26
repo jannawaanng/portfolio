@@ -53,11 +53,11 @@ export default function AboutMe() {
           
           {/* TITLE */}
           <div className="text-center sm:text-left shrink-0">
-            <p className="text-[9px] uppercase tracking-[0.25em] text-[#c4a882] mb-0.5">
+            <p className="text-[12px] uppercase tracking-[0.25em] text-[#c4a882] mb-0.5">
               ✿ Welcome to my desk
             </p>
-            <h1 className="text-xl md:text-2xl font-light text-[#5c4a3d]">
-              Get to know <span className="italic font-serif text-[#c4a882]">me</span>
+            <h1 className="text-2xl md:text-3xl font-light text-[#5c4a3d]">
+              Get to know <span className="italic font-serif text-[#c4a882]">me!</span>
             </h1>
           </div>
 
@@ -134,7 +134,7 @@ export default function AboutMe() {
             
             {/* CAMERA */}
             <a 
-              href="/photography"
+              href="/photos"
               className="absolute z-10 cursor-pointer transition-transform duration-200 hover:scale-105 hover:-translate-y-1 p-2 drop-shadow-[0_5px_3px_rgba(92,74,61,0.4)]"
               style={{ top: '55%', left: '20%', width: '16%' }}
               onMouseEnter={() => handleObjectEnter('📷', 'Photography', 'Capturing moments & teaching youth', '/photography')}
@@ -147,7 +147,7 @@ export default function AboutMe() {
             <div 
               className="absolute z-10 cursor-pointer transition-transform duration-200 hover:scale-105 hover:-translate-y-1 p-2 drop-shadow-[0_5px_3px_rgba(92,74,61,0.4)]"
               style={{ top: '44%', left: '9%', width: '14%' }}
-              onMouseEnter={() => handleObjectEnter('🚇', 'NYC Native', 'Born & raised in New York City', null)}
+              onMouseEnter={() => handleObjectEnter('🚇', 'From Flushing, NY', 'Born & raised in New York City', null)}
               onMouseLeave={handleObjectLeave}
             >
               <Image src="/desk-metrocard.svg" alt="MetroCard" width={85} height={55} className="w-full h-auto pointer-events-none" />
@@ -157,21 +157,22 @@ export default function AboutMe() {
             <div 
               className="absolute z-10 cursor-pointer transition-transform duration-200 hover:scale-105 hover:-translate-y-1 p-2 drop-shadow-[0_5px_3px_rgba(92,74,61,0.4)]"
               style={{ top: '10%', left: '7%', width: '28%' }}
-              onMouseEnter={() => handleObjectEnter('🎧', 'Now Playing', 'Lo-fi beats or Taylor Swift', null)}
+              onMouseEnter={() => handleObjectEnter('🎧', 'Now Playing', 'Lo-fi beats or RnB', null)}
               onMouseLeave={handleObjectLeave}
             >
               <Image src="/desk-headphone.svg" alt="Headphones" width={115} height={130} className="w-full h-auto pointer-events-none" />
             </div>
             
             {/* LAPTOP + IPAD + PEN */}
-            <div 
+            <a
+              href="/#projects"
               className="absolute z-20 cursor-pointer transition-transform duration-200 hover:scale-[1.03] hover:-translate-y-1 left-1/2 -translate-x-1/2 p-2 drop-shadow-[0_5px_3px_rgba(92,74,61,0.4)]"
               style={{ top: '20%', left: '50%', width: '45%' }}
-              onMouseEnter={() => handleObjectEnter('💻', 'Projects', 'Where the magic happens — view my work', '/projects')}
+              onMouseEnter={() => handleObjectEnter('💻', 'Projects', 'Where the magic happens! See my work.', '/projects')}
               onMouseLeave={handleObjectLeave}
             >
               <Image src="/desk-tech.svg" alt="Laptop and iPad" width={260} height={220} className="w-full h-auto pointer-events-none" />
-            </div>
+            </a>
             
             {/* PALETTE */}
             <a 
