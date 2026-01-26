@@ -30,7 +30,7 @@ const projects: Project[] = [
     title: "Duke Career Hub",
     subtitle: "Redesigning Duke’s student career homepage for clarity and action.",
     timeline: "JAN – MAY 2025",
-    image: "/mockup-career-hub.jpg",
+    image: "/ch-final.png",
     slug: "duke-career-hub",
     role: "UX / UI · User Research",
   },
