@@ -27,26 +27,37 @@ export default function UnlockedMapsCaseStudy() {
       
       {/* ============ HERO ============ */}
       <section className="relative h-[420px] md:h-[480px] overflow-hidden bg-[#F5F3EF]">
-        <Image
-          src="/unlockedmaps-hero-final.png" 
-          alt="UnlockedMaps accessible transit hero"
-          fill
-          priority
-          className="object-cover object-[50%_40%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-[#F5F3EF]/95 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.8)_0,transparent_45%)] pointer-events-none" />
+      <Image
+    src="/um-top-header.png"
+    alt="UnlockedMaps accessible transit hero mobile"
+    fill
+    priority
+    className="object-cover object-center lg:hidden"
+  />
+
+  {/* Desktop/Full Screen Image: Hidden by default, visible on large screens */}
+  <Image
+    src="/um-top-header.png"
+    alt="UnlockedMaps accessible transit hero desktop"
+    fill
+    priority
+    className="object-cover object-center hidden lg:block"
+  />
+
+  {/* Overlays stay on top of whichever image is visible */}
+  <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-[#F5F3EF]/95 pointer-events-none" />
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.8)_0,transparent_45%)] pointer-events-none" />
 
         <div className="absolute inset-0 flex items-end">
-          <div className="absolute left-0 right-0 bottom-8 h-48 bg-gradient-to-t from-[#c8f1ff]/65 via-[#fff3d7]/75 to-transparent pointer-events-none z-0" />
-          <div className="w-full max-w-7xl mx-auto px-6 pb-12 md:pb-16 drop-shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
-            <p className="text-[11px] md:text-[12px] tracking-[0.4em] uppercase text-[#14526b] mb-1">
+          <div className="absolute left-0 right-0 bottom-0 h-48 bg-gradient-to-t from-[#c8f1ff]/65 via-[#fff3d7]/75 to-transparent pointer-events-none z-0" />
+          <div className="w-full max-w-7xl mx-auto px-7 pb-10 md:pb-16 md:px-24 drop-shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
+            <p className="font-semibold text-[10px] md:text-[11.5px] tracking-[0.4em] uppercase text-[#14526b] mb-1">
               JUNE 2025 - ONGOING
             </p>
             <h1 className="text-4xl md:text-5xl font-extralight text-[#0e3951] leading-[0.85] mb-2 tracking-tighter uppercase">
               Unlocked<br />Maps
             </h1>
-            <p className="text-sm md:text-base text-[#14526b] max-w-md font-light">
+            <p className="text-md md:text-base text-[#14526b] max-w-6xl">
               Auditing UI friction points, prototyping interaction-first solutions, and engineering a D.C. Metro expansion for an accessibility-first transit platform.
             </p>
           </div>
@@ -55,7 +66,7 @@ export default function UnlockedMapsCaseStudy() {
 
       {/* ============ STATS BAR ============ */}
       <section className="relative -mt-8 px-6 flex justify-center z-10">
-        <div className="max-w-3xl w-full bg-gradient-to-r from-[#e7b25d] via-[#c8f1ff] to-[#c7f3d2] p-[1px] rounded-2xl shadow-lg">
+        <div className="max-w-4xl w-full bg-gradient-to-r from-[#e7b25d] via-[#c8f1ff] to-[#c7f3d2] p-[1px] rounded-2xl shadow-lg">
           <div className="bg-white/90 backdrop-blur-xl rounded-2xl px-6 py-3 flex flex-wrap items-center justify-between gap-3 text-[#0e3951]">
             {[
               ["98", "stations mapped"],
@@ -91,187 +102,114 @@ export default function UnlockedMapsCaseStudy() {
       </section>
 
      {/* ============ 01. THE PROBLEM ============ */}
+<section className="py-12 px-6 max-w-6xl mx-auto">
+  <div className="grid lg:grid-cols-[1fr,1.2fr] gap-8 items-start mb-8">
+    <div>
+      <div className="flex items-center gap-2 mb-3">
+        <span className="h-px w-5 bg-[#14526b]"></span>
+        <p className="text-[9px] tracking-[0.2em] uppercase text-[#14526b] font-bold">01. The Problem</p>
+      </div>
+      <h2 className="text-2xl md:text-3xl font-light text-[#2C3E3A] leading-tight mb-4">
+        <span className="text-[#e7b25d]">Combating</span> an Accessibility <span className="italic font-serif opacity-30">&quot;Void&quot;</span>
+      </h2>
+      <p className="text-sm leading-relaxed text-[#5C7A6F] mb-6">
+        UnlockedMaps provides transit autonomy for riders with disabilities, but the original interface worked against the user&apos;s primary goal of
+        <span className="text-[#2C3E3A] font-medium"> quickly verifying station accessibility.</span>
+      </p>
 
-     <section className="py-12 px-6 max-w-6xl mx-auto">
-
-<div className="grid lg:grid-cols-[1fr,1.2fr] gap-8 items-start">
-
-  <div>
-
-    <div className="flex items-center gap-2 mb-3">
-
-      <span className="h-px w-5 bg-[#14526b]"></span>
-
-      <p className="text-[9px] tracking-[0.2em] uppercase text-[#14526b] font-bold">01. The Problem</p>
-
-    </div>
-
-    <h2 className="text-2xl md:text-3xl font-light text-[#2C3E3A] leading-tight mb-4">
-
-      <span className="text-[#e7b25d]">Combating</span> an Accessibility <span className="italic font-serif opacity-30">&quot;Void&quot;</span>
-
-    </h2>
-
-    <p className="text-sm leading-relaxed text-[#5C7A6F] mb-6">
-
-      UnlockedMaps provides transit autonomy for riders with disabilities, but the original interface worked against the user&apos;s primary goal of 
-
-      <span className="text-[#2C3E3A] font-medium"> quickly verifying station accessibility.</span>
-
-    </p>
-
-    
-
-    {/* Pain Points */}
-
-    <div className="space-y-3">
-
-      {[
-
-        { label: "Information Overload", color: "#e7b25d", text: "Long paragraphs instead of quick status markers—eye strain during high-stress moments." },
-
-        { label: "No Micro-Feedback", color: "#14526b", text: "No visual confirmation on toggles or search—users couldn't tell if actions registered." },
-
-        { label: "Mismatched Hierarchy", color: "#2C3E3A", text: "Critical signals buried in dense, low-contrast text with equal visual weight." },
-
-      ].map((item, i) => (
-
-        <div key={i} className="flex gap-3">
-
-          <div className="w-1 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
-
-          <div>
-
-            <p className="text-[9px] font-bold uppercase tracking-widest mb-0.5" style={{ color: item.color }}>{item.label}</p>
-
-            <p className="text-[11px] text-[#5C7A6F] leading-relaxed">{item.text}</p>
-
+      {/* Pain Points */}
+      <div className="space-y-3">
+        {[
+          { label: "Information Overload", color: "#e7b25d", text: "Long paragraphs instead of quick status markers—eye strain during high-stress moments." },
+          { label: "No Micro-Feedback", color: "#14526b", text: "No visual confirmation on toggles or search—users couldn't tell if actions registered." },
+          { label: "Mismatched Hierarchy", color: "#2C3E3A", text: "Critical signals buried in dense, low-contrast text with equal visual weight." },
+        ].map((item, i) => (
+          <div key={i} className="flex gap-3">
+            <div className="w-1 rounded-full flex-shrink-0" style={{ backgroundColor: item.color }} />
+            <div>
+              <p className="text-[9px] font-bold uppercase tracking-widest mb-0.5" style={{ color: item.color }}>{item.label}</p>
+              <p className="text-[11px] text-[#5C7A6F] leading-relaxed">{item.text}</p>
+            </div>
           </div>
-
-        </div>
-
-      ))}
-
+        ))}
+      </div>
     </div>
 
+    {/* Audit Summary */}
+    <div className="bg-white rounded-xl border border-[#E0D9CE]/60 p-5 shadow-sm">
+      <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-4">Interface Audit Summary</p>
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <h4 className="text-[10px] font-semibold text-[#2C3E3A] mb-2">Core Components</h4>
+          <div className="space-y-1.5 text-[10px] text-[#5C7A6F]">
+            {[
+              ["Station Markers", "Color-coded status"],
+              ["Filter Panel", "Wheelchair, parking toggles"],
+              ["Search Bar", "No suggestions/errors"],
+              ["Sidebar", "Checkbox agency selection"],
+            ].map(([c, d], i) => (
+              <div key={i} className="flex gap-1.5">
+                <span className="text-[#e7b25d]">→</span>
+                <span><strong className="text-[#2C3E3A]">{c}:</strong> {d}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h4 className="text-[10px] font-semibold text-[#2C3E3A] mb-2">Interaction Mapping</h4>
+          <div className="space-y-1.5 text-[10px] text-[#5C7A6F]">
+            {[
+              ["Click Station", "Opens detail panel"],
+              ["Toggle Filter", "Updates map (no confirm)"],
+              ["Search", "Centers map (no error)"],
+              ["Slider", "Adjusts amenity radius"],
+            ].map(([c, d], i) => (
+              <div key={i} className="flex gap-1.5">
+                <span className="text-[#14526b]">•</span>
+                <span><strong className="text-[#2C3E3A]">{c}:</strong> {d}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div className="bg-[#c7f3d2]/20 rounded-lg p-3 border border-[#c7f3d2]/40">
+          <p className="text-[8px] uppercase tracking-widest text-green-700 font-bold mb-1">What Works</p>
+          <ul className="text-[9px] text-[#2C3E3A] space-y-0.5">
+            <li>• Color-coded markers</li>
+            <li>• Persistent legend</li>
+            <li>• Yelp/Refuge integration</li>
+          </ul>
+        </div>
+        <div className="bg-[#ffe6bd]/30 rounded-lg p-3 border border-[#e7b25d]/30">
+          <p className="text-[8px] uppercase tracking-widest text-[#e7b25d] font-bold mb-1">Pain Points</p>
+          <ul className="text-[9px] text-[#2C3E3A] space-y-0.5">
+            <li>• No microfeedback</li>
+            <li>• Dense filter layout</li>
+            <li>• No community layer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
-
-
-  {/* Audit Summary */}
-
-  <div className="bg-white rounded-xl border border-[#E0D9CE]/60 p-5 shadow-sm">
-
-    <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-4">Interface Audit Summary</p>
-
-    <div className="grid grid-cols-2 gap-4 mb-4">
-
-      <div>
-
-        <h4 className="text-[10px] font-semibold text-[#2C3E3A] mb-2">Core Components</h4>
-
-        <div className="space-y-1.5 text-[10px] text-[#5C7A6F]">
-
-          {[
-
-            ["Station Markers", "Color-coded status"],
-
-            ["Filter Panel", "Wheelchair, parking toggles"],
-
-            ["Search Bar", "No suggestions/errors"],
-
-            ["Sidebar", "Checkbox agency selection"],
-
-          ].map(([c, d], i) => (
-
-            <div key={i} className="flex gap-1.5">
-
-              <span className="text-[#e7b25d]">→</span>
-
-              <span><strong className="text-[#2C3E3A]">{c}:</strong> {d}</span>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
-
-      <div>
-
-        <h4 className="text-[10px] font-semibold text-[#2C3E3A] mb-2">Interaction Mapping</h4>
-
-        <div className="space-y-1.5 text-[10px] text-[#5C7A6F]">
-
-          {[
-
-            ["Click Station", "Opens detail panel"],
-
-            ["Toggle Filter", "Updates map (no confirm)"],
-
-            ["Search", "Centers map (no error)"],
-
-            ["Slider", "Adjusts amenity radius"],
-
-          ].map(([c, d], i) => (
-
-            <div key={i} className="flex gap-1.5">
-
-              <span className="text-[#14526b]">•</span>
-
-              <span><strong className="text-[#2C3E3A]">{c}:</strong> {d}</span>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </div>
-
+  {/* Integrated Figures */}
+  <div className="grid md:grid-cols-2 gap-6">
+    <div className="rounded-xl border border-[#E0D9CE]/60 shadow-sm overflow-hidden bg-white">
+      <img 
+        src="/um-fig1.png" 
+        alt="Product Interface Figure 1" 
+        className="w-full h-auto object-cover"
+      />
     </div>
-
-    <div className="grid grid-cols-2 gap-3">
-
-      <div className="bg-[#c7f3d2]/20 rounded-lg p-3 border border-[#c7f3d2]/40">
-
-        <p className="text-[8px] uppercase tracking-widest text-green-700 font-bold mb-1">What Works</p>
-
-        <ul className="text-[9px] text-[#2C3E3A] space-y-0.5">
-
-          <li>• Color-coded markers</li>
-
-          <li>• Persistent legend</li>
-
-          <li>• Yelp/Refuge integration</li>
-
-        </ul>
-
-      </div>
-
-      <div className="bg-[#ffe6bd]/30 rounded-lg p-3 border border-[#e7b25d]/30">
-
-        <p className="text-[8px] uppercase tracking-widest text-[#e7b25d] font-bold mb-1">Pain Points</p>
-
-        <ul className="text-[9px] text-[#2C3E3A] space-y-0.5">
-
-          <li>• No microfeedback</li>
-
-          <li>• Dense filter layout</li>
-
-          <li>• No community layer</li>
-
-        </ul>
-
-      </div>
-
+    <div className="rounded-xl border border-[#E0D9CE]/60 shadow-sm overflow-hidden bg-white">
+      <img 
+        src="/um-fig2.png" 
+        alt="Product Interface Figure 2" 
+        className="w-full h-auto object-cover"
+      />
     </div>
-
   </div>
-
-</div>
-
 </section>
 
       {/* ============ 02. RESEARCH ============ */}
@@ -467,65 +405,111 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
     </div>
   </div>
 
-      {/* Cities and About Row */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-white/40 rounded-2xl p-5 border border-[#E0D9CE]/40 shadow-sm">
-          <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-3">Problem/Solution Carousel</p>
-          <div className="relative mb-3">
-            <Image src={aboutShowAfter ? "/um-about-after.jpg" : "/um-about-before.png"} alt="About evolution" width={600} height={400} className="w-full h-auto rounded-xl border border-[#E0D9CE]/60" />
-            <div className={`absolute top-2 left-2 px-2 py-1 text-white text-[8px] font-bold uppercase rounded ${aboutShowAfter ? 'bg-green-600' : 'bg-red-500'}`}>{aboutShowAfter ? 'Final Carousel' : 'Original Paragraphs'}</div>
+{/* ============ CITIES & ABOUT EVOLUTION (Tall Box Fix) ============ */}
+<div className="grid md:grid-cols-2 gap-6 items-stretch w-full">
+        
+        {/* LEFT CARD: About Carousel */}
+        <div className="bg-white/40 rounded-2xl p-6 border border-[#E0D9CE]/40 shadow-sm flex flex-col h-full">
+          <div className="mb-4 shrink-0">
+            <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-2">Problem/Solution Carousel</p>
+            <h4 className="text-sm font-semibold text-[#2C3E3A] mb-2">Reducing Cognitive Load</h4>
+            <p className="text-[11px] text-[#5C7A6F] leading-relaxed">
+              The original "About" page greeted users with dense walls of text, and the excessive vertical space it took forced users to scroll multiple times. I refactored this into a swipeable carousel with the following three cards to break the narrative into digestible chunks.
+            </p>
           </div>
+          
+          {/* IMAGE AREA: Forced to 450px height so nothing gets cut off */}
+          <div className="relative w-full h-[450px] mb-4 rounded-xl border border-[#E0D9CE]/60 bg-[#FAFAFA] overflow-hidden shadow-inner">
+            <Image 
+              src={aboutShowAfter ? "/um-about-after.jpg" : "/um-about-before.png"} 
+              alt="About evolution" 
+              fill
+              className="object-contain p-2" 
+            />
+                     </div>
+          
           <button 
             onClick={() => setAboutShowAfter(!aboutShowAfter)}
-            className="w-full flex items-center justify-center gap-2 px-4 py-1.5 bg-[#14526b]/10 hover:bg-[#14526b]/20 rounded-full transition-colors"
+            className="w-full shrink-0 py-2.5 bg-[#14526b]/10 hover:bg-[#14526b]/20 rounded-full text-[10px] font-bold text-[#14526b] uppercase tracking-widest transition-colors"
           >
-            <span className="text-[9px] font-bold text-[#14526b] uppercase tracking-widest">Toggle View</span>
+            {aboutShowAfter ? "See Original" : "See Design Solution"}
           </button>
         </div>
 
-        <div className="space-y-4">
-          <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-3">Cities Page Refinement</p>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative">
-              <Image src="/um-city-before.png" alt="Before" width={300} height={450} className="w-full h-auto rounded-xl border border-[#E0D9CE]/60 opacity-60" />
-              <div className="absolute top-2 left-2 px-2 py-1 bg-red-500 text-white text-[8px] font-bold uppercase rounded">Before</div>
-            </div>
-            <div className="relative">
-              <Image src="/um-city-prototype.jpg" alt="Final" width={300} height={450} className="w-full h-auto rounded-xl border border-[#E0D9CE]/60" />
-              <div className="absolute top-2 left-2 px-2 py-1 bg-green-600 text-white text-[8px] font-bold uppercase rounded">Final</div>
-            </div>
+        {/* RIGHT CARD: Cities Refinement (Vertical Stack) */}
+        <div className="bg-white/40 rounded-2xl p-6 border border-[#E0D9CE]/40 shadow-sm flex flex-col h-full">
+          <div className="mb-4 shrink-0">
+            <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-2">Cities Page Refinement</p>
+            <h4 className="text-sm font-semibold text-[#2C3E3A] mb-2">Scalable Filtering Logic</h4>
+            <p className="text-[11px] text-[#5C7A6F] leading-relaxed">
+              The original design used a static grid that failed to scale as more cities were added. I introduced region-based filtering and a search function to organize the expanding dataset and streamline navigation.
+            </p>
           </div>
-          <p className="text-[10px] text-[#5C7A6F] leading-tight italic">Shifted from static, low-contrast grids to searchable region chips and interactive city cards.</p>
+
+          {/* GRID: Changed to grid-cols-1 (Vertical Stack) + grid-rows-3 to fill height evenly */}
+          <div className="grid grid-cols-1 grid-rows-3 gap-2 w-full h-[450px] mb-4">
+            {[
+              { img: "/um-city-before.png", label: "Original", status: "before" },
+              { img: "/um-city-wireframe.png", label: "Wireframe", status: "wip" },
+              { img: "/um-city-prototype.jpg", label: "Prototype", status: "after" },
+            ].map((item, i) => (
+              <div key={i} className="relative w-full h-full rounded-lg border border-[#E0D9CE]/60 bg-[#FAFAFA] overflow-hidden shadow-inner">
+                {/* object-contain keeps the whole image visible inside the horizontal slot */}
+                <Image 
+                  src={item.img} 
+                  alt={item.label} 
+                  fill
+                  className="object-contain p-2" 
+                />
+                <div className={`absolute top-2 left-2 px-1.5 py-0.5 text-[#0b3b42] text-[9px] font-bold uppercase rounded z-10 ${
+                  item.status === 'before' ? 'bg-[#f5e4dd]' : 
+                  item.status === 'wip' ? 'bg-[#f1e0c6]' : 'bg-[#d4e9f1]'
+                }`}>
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-auto shrink-0 bg-[#F1F5F9]/50 rounded-lg p-3 border border-slate-200">
+            <p className="text-[10px] text-[#475569] leading-tight text-center italic">
+              <strong>Deliverable:</strong> Filterable, searchable prototype that integrates a global map view to visualize all of the places the platform serves.
+            </p>
+          </div>
+          </div> </div>
         </div>
-      </div>
-    </div>
 
     {/* 3.3: THE JOURNEY VALIDATOR (The New Functional Layer) */}
     <div className="border-t border-[#E0D9CE]/60 pt-8">
       <div className="mb-8">
         <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-2">3.3 The Verification Layer</p>
-        <h3 className="text-lg font-light text-[#2C3E3A]">Addressing the &quot;Verification Gap&quot;</h3>
+        <h3 className="text-lg font-light text-[#2C3E3A]">Addressing the Gap in Unlocked Maps</h3>
       </div>
 
       <div className="bg-[#14526b] text-white rounded-2xl p-6 mb-8 shadow-sm">
-        <div className="grid md:grid-cols-[1fr,0.6fr] gap-8 items-center">
+        <div className="grid md:grid-cols-[1fr,0.6fr] gap-4 items-center">
           <div>
             <p className="text-[9px] uppercase tracking-widest text-[#e7b25d] font-bold mb-2">The Problem</p>
             <p className="text-sm font-light leading-relaxed text-white/90">
-              Standard transit apps prioritize efficiency over <strong className="text-[#e7b25d]">autonomy.</strong> Users check secondary apps mid-journey to verify elevator status, causing high cognitive load.
+            Accessibility data isn't integrated into standard apps like Google or Apple Maps. Since the current platform lacks route-finding, users must plan trips elsewhere and manually verify individual stations here, forcing inconvenient <strong className="text-[#e7b25d]">app-switching</strong> on the go.      </p>
+          </div>
+          <div className="bg-white/10 rounded-xl p-2.5 border border-white/10">
+            <p className="text-[9px] uppercase tracking-widest text-[#e7b25d] font-bold mb-1"> Goal</p>
+            <p className="text-[11px] leading-relaxed text-white/90">
+            End-to-end navigation that integrates route-finding directly with accessibility data.
             </p>
           </div>
-          <div className="bg-white/10 rounded-xl p-4 border border-white/10">
-            <p className="text-[9px] uppercase tracking-widest text-[#e7b25d] font-bold mb-1">Functional Goal</p>
-            <p className="text-[10px] leading-relaxed text-white/80">
-              Provide 100% journey context in a single view to eliminate mid-trip uncertainty.
+          <div className="bg-white/10 rounded-xl p-2.5 border border-white/10">
+            <p className="text-[9px] uppercase tracking-widest text-[#e7b25d] font-bold mb-1"> Proposed Solution</p>
+            <p className="text-[11px] leading-relaxed text-white/90">
+           This gap would be filled by a 'Journey Validator' feature, which would audit users' specific routes for accessibility barriers. Users can input their start and end points to instantly verify the accessibility status of every station along the route.
             </p>
           </div>
         </div>
       </div>
 
       <div className="mb-6">
-        <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-4">Prototyping Layout Trade-offs</p>
+        <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-4">Prototype Wireframe</p>
         <Image src="/um-jv-concept.png" alt="Concept comparison" width={1000} height={600} className="w-full max-w-2xl h-auto rounded-xl border border-[#E0D9CE]/60 bg-white mx-auto mb-6" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {[
@@ -550,13 +534,13 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
       <section className="py-10 px-6 max-w-5xl mx-auto border-t border-[#E0D9CE]/60">
         <div className="flex items-center gap-3 mb-4">
           <span className="h-px w-6 bg-[#14526b]"></span>
-          <p className="text-[10px] tracking-[0.2em] uppercase text-[#14526b] font-bold">04. Technical Solution</p>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-[#14526b] font-bold">04. Dev Work</p>
         </div>
         <h2 className="text-3xl font-light text-[#2C3E3A] leading-tight mb-4">
-          Mapping the <span className="italic font-serif text-[#14526b]">Invisible Network</span>
+          Expanding the Unlocked Maps Network: <span className="italic font-serif text-[#14526b]">Washington D.C.</span>
         </h2>
         <p className="text-base font-light text-[#5C7A6F] max-w-2xl mb-6">
-          Engineered the complete DC Metro data layer—98 stations across 6 lines—using WMATA APIs, web scrapers, and custom regex parsers.
+          In addition to design work, I implemented the DC Metro data layer using WMATA APIs, web scrapers, and custom regex parsers.
         </p>
 
         <div className="bg-white rounded-2xl p-6 border border-[#E0D9CE]/40 shadow-sm mb-6">
@@ -599,12 +583,7 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
           <div className="bg-[#0e3951] text-white rounded-2xl p-5">
             <p className="text-[9px] uppercase tracking-widest text-[#e7b25d] font-bold mb-3">Elevator Cron Job</p>
             <p className="text-xs text-white/70 mb-3">Python script fetches real-time incidents, filters escalators, uses fuzzy matching for station names.</p>
-            <div className="flex flex-wrap gap-1">
-              {["Dupont Circle", "Metro Center", "Gallery Place"].map((s, i) => (
-                <span key={i} className="text-[8px] px-1.5 py-0.5 bg-red-500/20 text-red-300 rounded">⚠ {s}</span>
-              ))}
-            </div>
-          </div>
+                     </div>
           <div className="bg-[#c8f1ff] text-[#0e3951] rounded-2xl p-5">
             <p className="text-[9px] uppercase tracking-widest font-bold mb-3">Ticket Office Scraper</p>
             <p className="text-xs opacity-80 mb-3">No API existed—built regex scraper to detect station names in free-text entries.</p>
@@ -639,7 +618,7 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
 
           <div className="bg-[#14526b] p-5 rounded-2xl max-w-lg mx-auto">
             <p className="text-base font-light">
-              Architected the <span className="text-[#e7b25d] font-semibold">entire DC Metro data ecosystem</span>—elevator status for nearly 100 stations.
+              Architected the <span className="text-[#e7b25d] font-semibold">DC Metro data ecosystem</span>—elevator status for nearly 100 stations.
             </p>
           </div>
         </div>
@@ -658,9 +637,9 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-4">
             {[
-              { title: "Accessibility is about speed", detail: "Users need status verification in under 3 seconds. Every extra click is a barrier." },
-              { title: "Dark UI requires purpose", detail: "Fade-to-black effects must direct attention to critical status markers." },
-              { title: "Data quality determines trust", detail: "Real-time data is only valuable if accurate—fuzzy matching must avoid false positives." },
+              { title: "Reducing interaction cost", detail: "For users in transit, every second counts. For this project, it was important for design decisions to prioritize immediate status visibility over deep navigation, so users can use the platform to make decisions on the go." },
+              { title: "Implementing purpose-driven UI", detail: "Early iterations suffered from visual clutter; I had to figure out when to follow a 'less is more' approach. I wanted to ensure that visual elements were able to direct user attention effectively and simplify the consumption of complex data." },
+              { title: "Data quality determines trust", detail: "Real-time data is only valuable if accurate. Real-time feeds are often messy and inconsistent. I built a robust normalization layer to clean and standardize inputs from various sources/APIs, ensuring a single, reliable source of truth for each station in the database." },
             ].map((item, i) => (
               <div key={i} className="flex gap-3">
                 <span className="text-xl font-extralight text-[#e7b25d]">0{i + 1}</span>
@@ -676,9 +655,10 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
             <p className="text-[9px] uppercase tracking-widest text-[#14526b] font-bold mb-3">Next Steps</p>
             <div className="space-y-2">
               {[
-                { action: "Deploy elevator cron job", status: "In Progress" },
+                { action: "Deployment", status: "In Progress" },
                 { action: "Twitter/X API integration", status: "Pending" },
-                { action: "Community reporting features", status: "Planned" },
+                { action: "Community reporting feature", status: "Planned" },
+                { action: "Journey Validator", status: "Planned" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center justify-between bg-white rounded-lg px-3 py-2">
                   <span className="text-[10px] text-[#2C3E3A]">{item.action}</span>
@@ -694,20 +674,11 @@ Dark UI <span className="italic font-serif">Industry Case Studies</span>
         </div>
 
         <p className="mt-6 text-sm text-[#2C3E3A] font-light max-w-2xl">
-          <strong>Accessible design isn&apos;t a feature—it&apos;s a foundation.</strong> Every decision either enables or prevents someone from participating in their city.
+          <strong>Accessible design isn&apos;t a feature—it should be the foundation.</strong> 
         </p>
       </section>
 
-      {/* ============ FOOTER ============ */}
-      <footer className="bg-[#2C3E3A] text-white py-6">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-center md:text-left">
-            <p className="text-[10px] tracking-[0.3em] uppercase font-bold">Unlocked Maps</p>
-            <p className="text-[9px] text-white/40">UI/UX Audit &amp; Data Engineering · 2025</p>
-          </div>
-          <p className="text-[9px] text-white/40 italic">Designed by Janna Wang</p>
-        </div>
-      </footer>
+     
     </main>
   );
 }
