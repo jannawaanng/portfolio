@@ -5,6 +5,7 @@ import "./globals.css";
 import HeroPlanet from "./components/hero";
 import BackToTop from "./components/backToTop";
 import Footer from "./components/footer";
+import FooterWrapper from "./components/footerWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,7 @@ export default function RootLayout({
   <Navbar />
       <BackToTop />
         {children}
-        <Footer />
+        <FooterWrapper />
       </body>
     </html>
   );

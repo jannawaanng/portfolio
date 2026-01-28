@@ -12,7 +12,7 @@ type Project = {
   slug: string;
   role: string;
   highlight?: string;
-  customUrl?: string; 
+  customUrl?: string;
   note?: string;
 };
 
@@ -21,44 +21,54 @@ const projects: Project[] = [
     title: "Unlocked Maps",
     subtitle: "Iterating and scaling a platform for live transit accessibility tracking.",
     timeline: "JUN 2025 – PRESENT",
-    image: "/um-mockup.png", 
+    image: "/um-mockup.png",
     slug: "unlockedmaps",
     highlight: "Accessibility Design",
-    role: "UX / UI · Frontend", // Shortened for tightness
+    role: "UX / UI · Frontend",
   },
   {
     title: "Duke Career Hub",
-    subtitle: "Redesigned Duke’s student career homepage for clarity and action.",
+    subtitle: "Redesigned Duke's student career homepage for clarity and action.",
     timeline: "JAN – MAY 2025",
     image: "/ch-mockup.png",
     slug: "duke-career-hub",
-    role: "UX / UI · Research", // Shortened
+    role: "UX / UI · Research",
   },
   {
-    title: "Modular Trays for DPS", // Shortened title slightly
+    title: "Modular Trays for Durham Public Schools",
     subtitle: "Designed and patented a modular, reusable lunch tray system to improve student dining experience.",
     timeline: "AUG 2023 – APR 2024",
-    image: "/lb-top.png", 
+    image: "/lb-top.png",
     slug: "lunch-bunch",
     role: "Mechanical Design",
-    highlight: "Human-Centered Design"
+    highlight: "Human-Centered Design",
+  },
+  {
+    title: "Brain Portal at Duke Institute for Brain Sciences",
+    subtitle: "Contributed to early-stage metadata architecture and content strategies for a dynamic, interactive neuroscience installation.",
+    timeline: "MAY - AUG 2024",
+    image: "/dibs.png",
+    slug: "brain-portal",
+    role: "Experiential Design",
+    highlight: "Information Architecture",
+    customUrl: "https://dibs.duke.edu/education/everyone/brain-portal/",
   },
   {
     title: "Project Tadpole",
-    subtitle: "Engineering accessible toys and interfaces for children,  including adapted consoles, switch-adapted toys, and a ride-on car refitted with rear mobility mounts and variable speed control.",
+    subtitle: "Engineering accessible toys and interfaces for children, including adapted consoles, switch-adapted toys, and a ride-on car refitted with rear mobility mounts and variable speed control.",
     timeline: "OCT 2025 – PRESENT",
-    image: "", 
+    image: "",
     slug: "project-tadpole",
-    role: "Accessibility Eng",
+    role: "Accessibility Engineering",
     highlight: "Mechatronics",
     customUrl: "/project-tadpole-mat.pdf",
-    note: "click view to see a recent project: a modular sensory mat", 
+    note: "click view to see a recent project: a modular sensory mat",
   },
   {
     title: "Engineering Portfolio",
     subtitle: "Mechanical design work including robot mechanisms and a knee brace for the FIRST Innovation Challenge.",
     timeline: "2019 – 2023",
-    image: "", 
+    image: "",
     slug: "frc-engineering",
     role: "Mechanical Design",
     highlight: "Robotics",
@@ -71,87 +81,85 @@ export default function ProjectSection() {
   return (
     <section
       id="projects"
-      // TIGHTENED: py-8 instead of py-12
-      className="w-full bg-[#f5e5f3] py-8 border-t border-[#dbdaf5]"
+      className="w-full bg-gradient-to-b from-[#FDF9F7] to-[#FBF4F0] py-10 relative overflow-hidden"
     >
-      <div className="absolute top-20 right-[10%] w-64 h-64 bg-[#A8C5BA]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-[15%] w-80 h-80 bg-[#8BA89E]/10 rounded-full blur-3xl" />
+      
+      {/* Floating stars */}
+      <div className="absolute top-20 left-[20%] text-violet-400/60 text-sm">✦</div>
+      <div className="absolute top-12 right-[18%] text-pink-400/50 text-xs">✧</div>
+      <div className="absolute bottom-20 right-[25%] text-emerald-400/50 text-sm">✦</div>
+      <div className="absolute bottom-10 left-[15%] text-amber-400/55 text-xs">✧</div>
 
-      {/* TIGHTENED: gap-4 instead of gap-8, max-w-6xl for tighter width */}
-      <div className="mx-auto max-w-6xl px-5 grid grid-cols-1 lg:grid-cols-2 gap-4 auto-rows-min">
-        {projects.map((p, i) => {
-          const destination = p.customUrl || `/projects/${p.slug}`;
-          const target = p.customUrl ? "_blank" : undefined;
-          const hasImage = p.image !== "";
-          
-          // KEY LOGIC: "Lunch Bunch" (index 2) spans 2 rows on big screens
-          // This allows items 3 & 4 to stack next to it.
-          const isLunchBunch = i === 2;
+      <div className="mx-auto max-w-5xl px-6 relative">
+        
+         {/* Project grid - 2x2 on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {projects.map((p, i) => {
+            const destination = p.customUrl || `/projects/${p.slug}`;
+            const target = p.customUrl ? "_blank" : undefined;
+            const hasImage = p.image !== "";
 
-          return (
-            <article
-              key={p.slug}
-              className={`
-                relative overflow-hidden
-                rounded-[24px] 
-                border border-[#E7DED1]
-                bg-[#FCFAF7]
-                shadow-[0_10px_30px_rgba(15,23,42,0.06)]
-                p-6
-                transition-all duration-300
-                hover:-translate-y-[2px]
-                hover:shadow-[0_20px_60px_rgba(15,23,42,0.12)]
-                group
-                flex flex-col
-                ${isLunchBunch ? "lg:row-span-2 h-full" : "h-full"}
-              `}
-            >
-              {/* Brand rail */}
-              <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-[#31568d] via-[#c69ac6] to-[#88afcd] opacity-90" />
-              <div className="absolute inset-0 pointer-events-none opacity-[0.18] bg-[url('/noise.png')] bg-repeat mix-blend-soft-light" />
+            return (
+              <article
+                key={p.slug}
+                className="group relative bg-white/60 backdrop-blur-sm rounded-xl border border-[#E8E4DE] p-4 transition-all duration-300 hover:bg-white/80 hover:shadow-lg hover:shadow-[#E8DCD4]/40 flex flex-col"
+              >
+                {/* Image at top if exists */}
+                {hasImage && (
+                  <div className="mb-3">
+                    <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden bg-[#F5F0EB]">
+                      <Image
+                        src={p.image}
+                        alt={p.title}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                )}
 
-              <div className="relative z-10 flex flex-col gap-4 h-full">
-                
-                {/* TEXT SIDE */}
-                <div className="flex flex-col flex-1">
-                  {/* Meta - TIGHTENED */}
+                {/* Text content */}
+                <div className="flex-1 flex flex-col">
+                  
+                  {/* Index + timeline */}
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-[#A89E90] font-semibold">
-                      {p.timeline}
-                    </p>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#B3AB9D]">
+                    <span className="text-[11px] text-[#aea1b8] tabular-nums font-medium">
                       {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[9px] tracking-[0.12em] uppercase text-[#A8A098]">
+                      {p.timeline}
                     </span>
                   </div>
 
-                  {/* Title - TIGHTENED SIZE */}
-                  <h3 className="font-display text-[26px] tracking-[-0.03em] text-[#202c53] leading-none mb-2">
+                  {/* Title */}
+                  <h3 className="font-serif text-[20px] text-[#2D2A26] leading-tight tracking-[-0.01em] mb-1.5 group-hover:text-[#1A1816] transition-colors">
                     {p.title}
                   </h3>
 
-                  {/* Subtitle - TIGHTENED */}
-                  <p className="font-body text-[14px] text-[#4C4A45] leading-[1.5] mb-3 line-clamp-3">
+                  {/* Subtitle */}
+                  <p className="text-[13px] text-[#5C574E] leading-snug mb-3 line-clamp-2 flex-1">
                     {p.subtitle}
                   </p>
 
-                  {/* Note - TIGHTENED */}
+                  {/* Note if exists */}
                   {p.note && (
-                    <div className="mb-4 flex items-start gap-2 text-[11px] font-medium text-[#5C7A6F] bg-[#E3DAD0]/30 p-2 rounded-md border border-[#E3DAD0]/60 w-full leading-snug">
-                      <FileText size={12} className="mt-[2px] shrink-0" />
-                      <span>{p.note}</span>
+                    <div className="mb-3 inline-flex items-center gap-1.5 text-[10px] text-[#7A9E8A]">
+                      <FileText size={10} className="shrink-0" />
+                      <span className="line-clamp-1">{p.note}</span>
                     </div>
                   )}
 
-                  {/* Pills + CTA - TIGHTENED MARGINS */}
-                  <div className="flex items-center justify-between flex-wrap gap-2 mt-auto pt-2">
-                    <div className="flex flex-wrap gap-1.5">
+                  {/* Bottom row: pills + CTA */}
+                  <div className="flex items-center justify-between gap-2 mt-auto">
+                    <div className="flex flex-wrap items-center gap-1.5">
                       {p.role && (
-                        <span className="font-body text-[10px] font-medium px-2.5 py-1 rounded-full bg-[#f7ecda] text-[#0e1d3e]">
+                        <span className="text-[9px] font-medium px-2 py-0.5 rounded-full bg-[#F5EDE4] text-[#6B5C50]">
                           {p.role}
                         </span>
                       )}
                       {p.highlight && (
-                        <span className="font-body text-[10px] font-medium px-2.5 py-1 rounded-full bg-[#d3e4ff] text-[#3A4270]">
+                        <span className="text-[9px] font-medium px-2 py-0.5 rounded-full bg-[#EDE4F0] text-[#6B5080]">
                           {p.highlight}
                         </span>
                       )}
@@ -161,36 +169,19 @@ export default function ProjectSection() {
                       href={destination}
                       target={target}
                       rel={target === "_blank" ? "noopener noreferrer" : undefined}
-                      className="inline-flex items-center gap-1.5 text-[12px] font-body text-[#1C2129] group hover:text-black"
+                      className="inline-flex items-center gap-1.5 text-[11px] font-medium text-[#3D3530] hover:text-[#1A1816] transition-colors shrink-0"
                     >
-                      <span className="border-b border-transparent group-hover:border-black pb-[0.5px]">View</span>
-                      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#1C2129] text-white text-[9px] group-hover:scale-105 transition-transform">↗</span>
+                      <span>View</span>
+                      <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#7A9E8A] text-white text-[8px] group-hover:scale-110 transition-transform">
+                        ↗
+                      </span>
                     </Link>
                   </div>
                 </div>
-
-                {/* IMAGE SIDE */}
-                {/* Logic: Lunch Bunch image is tall. Others are standard aspect. */}
-                {hasImage && (
-                  <div className="w-full mt-2">
-                    <div className={`
-                      relative w-full rounded-[18px] overflow-hidden bg-white border border-[#E8E4DC] shadow-sm
-                      ${isLunchBunch ? 'aspect-[4/3] lg:aspect-auto lg:h-[320px]' : 'aspect-[2/1]'}
-                    `}>
-                      <Image
-                        src={p.image}
-                        alt={p.title}
-                        fill
-                        sizes="(min-width: 1024px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-            </article>
-          );
-        })}
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
