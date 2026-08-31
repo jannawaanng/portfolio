@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 
+
 export default function Hero() {
   const handleScroll = () => {
     const target = document.getElementById("first-project") || document.getElementById("projects");
@@ -14,15 +15,34 @@ export default function Hero() {
     }
   };
 
+ function Dot({ top, left, size, color, delay }: {
+  top: number; left: number; size: number; color: string; delay: number;
+}) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-      
+    <div
+      className="absolute rounded-full"
+      style={{
+        top: `${top}%`,
+        left: `${left}%`,
+        width: `${size}px`,
+        height: `${size}px`,
+        backgroundColor: color,
+        boxShadow: `0 0 ${size * 1.5}px ${color}`,
+        animation: `dot-twinkle 2.8s ease-in-out infinite`,
+        animationDelay: `${delay}s`,
+      }}
+    />
+  );
+}
+
+  return (
+<section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Background */}
       <div 
         className="absolute inset-0 z-0"
         style={{
           background: `
-            radial-gradient(ellipse 70% 50% at 75% 50%, rgba(255,248,244,1) 0%, transparent 60%),
+            radial-gradient(ellipse 85% 75% at 75% 50%, rgb(248, 251, 240) 0%, transparent 65%),
             radial-gradient(ellipse 50% 40% at 20% 80%, rgba(255,245,250,0.6) 0%, transparent 50%),
             #FFF6F2
           `,
@@ -37,66 +57,7 @@ export default function Hero() {
       {/* Cosmic Layer */}
       <div className="pointer-events-none absolute inset-0 z-[2] overflow-hidden">
         
-        {/* PLANET 1 - Rose */}
-        <div className="absolute animate-float-planet" style={{ top: '16%', left: '4.5%' }}>
-          <svg width="95" height="95" viewBox="0 0 85 85">
-            <defs>
-              <radialGradient id="planet1-base" cx="35%" cy="35%" r="60%">
-                <stop offset="0%" stopColor="#FFE4EC"/>
-                <stop offset="45%" stopColor="#FFCAD8"/>
-                <stop offset="100%" stopColor="#E8A0B8"/>
-              </radialGradient>
-              <radialGradient id="planet1-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="90%" stopColor="transparent"/>
-                <stop offset="100%" stopColor="rgba(255,200,216,0.4)"/>
-              </radialGradient>
-              <filter id="planet1-texture" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
-                <feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="3" result="noise"/>
-                <feDiffuseLighting in="noise" lightingColor="#FFD8E4" surfaceScale="1.5" result="light">
-                  <feDistantLight azimuth="45" elevation="60"/>
-                </feDiffuseLighting>
-                <feComposite in="SourceGraphic" in2="light" operator="arithmetic" k1="1" k2="0.3" k3="0.1" k4="0"/>
-              </filter>
-              <clipPath id="planet1-clip">
-                <circle cx="42.5" cy="42.5" r="38"/>
-              </clipPath>
-            </defs>
-            <circle cx="42.5" cy="42.5" r="38" fill="url(#planet1-base)" filter="url(#planet1-texture)" clipPath="url(#planet1-clip)"/>
-            <ellipse cx="30" cy="28" rx="18" ry="14" fill="rgba(255,255,255,0.2)"/>
-            <circle cx="42.5" cy="42.5" r="40" fill="url(#planet1-glow)"/>
-          </svg>
-        </div>
-
-        {/* PLANET 2 - Violet */}
-        <div className="absolute animate-float-planet-slow top-[40%] right-[10%] md:top-[74%] sm:left-[17%]" style={{ animationDelay: '2s' }}>
-          <svg width="120" height="120" viewBox="0 0 55 55">
-            <defs>
-              <radialGradient id="planet2-base" cx="35%" cy="35%" r="60%">
-                <stop offset="0%" stopColor="#EDE4FF"/>
-                <stop offset="50%" stopColor="#D8C8F8"/>
-                <stop offset="100%" stopColor="#B8A0E0"/>
-              </radialGradient>
-              <filter id="planet2-texture" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
-                <feTurbulence type="fractalNoise" baseFrequency="0.45" numOctaves="3" result="noise"/>
-                <feDiffuseLighting in="noise" lightingColor="#E0D8F0" surfaceScale=".7" result="light">
-                  <feDistantLight azimuth="45" elevation="55"/>
-                </feDiffuseLighting>
-                <feComposite in="SourceGraphic" in2="light" operator="arithmetic" k1="1" k2="0.25" k3="0.1" k4="0"/>
-              </filter>
-              <clipPath id="planet2-clip">
-                <circle cx="27.5" cy="27.5" r="25"/>
-              </clipPath>
-              <radialGradient id="planet2-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="95%" stopColor="transparent"/>
-                <stop offset="100%" stopColor="rgba(200,200,216)"/>
-              </radialGradient>
-            </defs>
-            <circle cx="27.5" cy="27.5" r="25" fill="url(#planet2-base)" filter="url(#planet2-texture)" clipPath="url(#planet2-clip)"/>
-            <ellipse cx="25" cy="20" rx="15" ry="12" fill="rgba(255,255,255,0.1)"/>
-            <circle cx="27.5" cy="27.5" r="25" fill="url(#planet2-glow)"/>
-          </svg>
-        </div>
-
+    
         {/* ORBITAL ARCS */}
         <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.35 }}>
           <defs>
@@ -115,83 +76,96 @@ export default function Hero() {
           <path d="M 2% 60% Q 18% 85%, 38% 72%" fill="none" stroke="url(#arc-violet)" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
 
-        {/* STARS */}
-        <Star top={4} left={18} size={12} color="#FFCAD8" delay={0} glow />
-        <Star top={16} left={4} size={8} color="#FFD8E4" delay={0.6} />
-        <Star top={22} left={16} size={6} color="#FFCAD8" delay={1.2} />
-        <Star top={10} left={24} size={5} color="#FFE4EC" delay={1.8} />
-        <Star top={60} left={4} size={10} color="#D8C8F8" delay={0.3} glow />
-        <Star top={78} left={16} size={7} color="#E4DCF8" delay={0.9} />
-        <Star top={72} left={3} size={5} color="#D8C8F8" delay={1.5} />
-        <Star top={5} left={36} size={8} color="#FFE0D8" delay={0.5} glow />
-        <Star top={16} left={46} size={6} color="#FFE8E4" delay={1.1} />
-        <Star top={70} left={76} size={7} color="#E4DCF8" delay={0.7} glow />
-        <Star top={82} left={86} size={5} color="#D8C8F8" delay={1.3} />
-        <Star top={38} left={1} size={5} color="#FFD8E4" delay={2} />
-        <Star top={88} left={42} size={5} color="#D8C8F8" delay={2.3} />
-        <Star top={3} left={58} size={5} color="#FFE4EC" delay={2.6} />
+<Dot top={8} left={6} size={4} color="#FFE8A3" delay={0} />
+<Dot top={14} left={11} size={7} color="#FFFFFF" delay={0.9} />
+<Dot top={6} left={19} size={3} color="#FFE8A3" delay={1.7} />
+<Dot top={19} left={24} size={5} color="#FFFFFF" delay={0.4} />
+<Dot top={11} left={31} size={4} color="#FFE8A3" delay={2.1} />
+<Dot top={22} left={16} size={6} color="#FFFFFF" delay={1.2} />
+<Dot top={9} left={37} size={3} color="#FFE8A3" delay={0.6} />
+<Dot top={17} left={42} size={5} color="#FFFFFF" delay={1.9} />
+
+{/* Larger accent stars — clustered around the moon, alternating */}
+<Star top={16} left={67} size={26} color="#FFC700" delay={1.1} glow />
+<Star top={32} left={70} size={24} color="#FFFFFF" delay={1.6} />
+<Star top={14} left={73} size={19} color="#FFFFFF" delay={2.6} />
+
+{/* Small/medium screens — repositioned clear of bunny */}
+<div className="block lg:hidden">
+  <Star top={62} left={88} size={28} color="#FFC700" delay={0.8} glow />
+  <Star top={55} left={68} size={26} color="#FFFFFF" delay={0.3} glow />
+  <Star top={70} left={92} size={20} color="#FFC700" delay={2.1} />
+</div>
+
+{/* Large screens only — original position */}
+<div className="hidden lg:block">
+  <Star top={38} left={78} size={28} color="#FFC700" delay={0.8} glow />
+  <Star top={55} left={68} size={26} color="#FFFFFF" delay={0.3} glow />
+  <Star top={50} left={78} size={20} color="#FFC700" delay={2.1} />
+</div>
       </div>
 
 {/* CONTENT */}
-<div className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-5xl w-full gap-12 lg:gap-20 pointer-events-none">
-        
-{/* LEFT: Text Block */}
-<div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left max-w-[500px] pointer-events-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-[#FFE0E8] shadow-sm mb-6">
-            <span className="text-lg">✨</span>
-            <span className="text-[11px] font-bold tracking-widest text-[#C0989C] uppercase">
-              Welcome to my orbit!
-            </span>
-          </div>
+<div className="relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-between max-w-5xl w-full gap-4 md:gap-12 lg:gap-20 pointer-events-none px-4 pt-20 md:pt-0">
+<div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left max-w-[500px] pointer-events-auto w-full mx-auto md:mx-0">
+<div style={{ transform: 'translateX(12px)' }}>
+ 
+<div className="relative mb-4 group cursor-default">
+<h1 className="name-font text-[clamp(64px,12vw,96px)] text-[#2d3a35] leading-[0.85] transition-transform duration-500 group-hover:scale-[1.02]">
+Janna
+</h1>
+</div>
+<p className="text-[17px] sm:text-[19px] leading-relaxed text-[#4a5550] mt-2 mb-4">
+  Product designer & engineer building{" "}
+  <span className="font-bold text-[#2d3a35] border-b-2 border-[#1F4E4A]/40">accessible</span>,{" "}
+  <span className="font-bold text-[#2d3a35] border-b-2 border-[#FFC700]">intuitive</span>{" "}
+  experiences.
+</p>
+<div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-9">
+<span className="px-3 py-1 rounded-full bg-[#1F4E4A]/10 border border-[#1F4E4A]/20 text-[11px] font-bold tracking-wide text-[#1F4E4A] uppercase">
+Senior @ Duke
+</span>
+<span className="px-3 py-1 rounded-full bg-[#1F4E4A]/10 border border-[#1F4E4A]/20 text-[11px] font-bold tracking-wide text-[#1F4E4A] uppercase">
+Product & AI Strategy @ Siemens
+</span>
+<span className="px-3 py-1 rounded-full bg-[#1F4E4A]/10 border border-[#1F4E4A]/20 text-[11px] font-bold tracking-wide text-[#1F4E4A] uppercase">
+Patent Co-Inventor
 
-          <div className="relative mb-6 group cursor-default">
-            <h1 className="name-font text-[clamp(64px,12vw,96px)] text-[#2d3a35] leading-[0.85] transition-transform duration-500 group-hover:scale-[1.02]">
-              Janna<span className="text-[#FFBAC8]">.</span>
-            </h1>
-            <div className="absolute -bottom-2 left-0 w-full h-3 overflow-visible">
-              <svg viewBox="0 0 100 20" preserveAspectRatio="none" className="w-full h-full text-[#FFBAC8] opacity-70">
-                <path d="M0,10 Q25,0 50,10 T100,10" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
-              </svg>
-            </div>
-          </div>
+</span>
 
-          <p className="text-[17px] sm:text-[19px] leading-relaxed text-[#5c6b66] mt-6 mb-10">
-            Product designer & engineer building{" "}
-            <span className="font-bold text-[#2d3a35] border-b-2 border-[#D4C4F0]">accessible</span>,{" "}
-            <span className="font-bold text-[#2d3a35] border-b-2 border-[#FFBAC8]">intuitive</span>{" "}
-            spaces that <span className="text-[#D4889C] italic font-semibold">spark joy</span>.
-          </p>
+</div>
 
-          <button
-            onClick={handleScroll}
-            className="group relative flex items-center gap-5 bg-white border-2 border-[#FFE8EC] hover:border-[#FFBAC8] text-[#2d3a35] pl-10 pr-4 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#FFBAC8]/15 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm"
-          >
-            <span className="text-[12px] font-black uppercase tracking-[0.3em] text-[#6a6a64] group-hover:text-[#2d3a35]">
-              Dig into my work
-            </span>
-            
-            <div className="relative w-11 h-11 flex items-center justify-center bg-[#FFF8F4] rounded-full border border-[#FFE8E0] transition-transform group-hover:rotate-12">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 z-10 overflow-visible">
-                <defs>
-                  <mask id="bite-mask">
-                    <rect width="24" height="24" fill="white" />
-                    <circle cx="20" cy="4" r="5" fill="black" className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    <circle cx="17" cy="8" r="4" fill="black" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75" />
-                  </mask>
-                </defs>
-                <g mask="url(#bite-mask)">
-                  <path d="M20.5 3.5C20.5 3.5 16.5 3.5 13.5 6.5C10.5 9.5 5.5 19.5 5.5 19.5C5.5 19.5 15.5 14.5 18.5 11.5C21.5 8.5 21.5 4.5 21.5 4.5L20.5 3.5Z" fill="#FB8C00" />
-                  <path d="M19.5 4.5L21.5 1.5M19.5 4.5L16.5 2.5M19.5 4.5L20.5 6.5" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" />
-                </g>
-              </svg>
-            </div>
-          </button>
-        </div>
-
-        {/* RIGHT: Bunny Orbit System */}
-        <div className="flex-1 flex items-center justify-center md:justify-end w-full">
-          <BunnyOrbitSystem />
-        </div>
+<button
+  onClick={handleScroll}
+  className="group relative inline-flex items-center gap-3 bg-white border-2 border-[#FFE8EC] hover:border-[#FFBAC8] text-[#2d3a35] pl-5 md:pl-7 pr-3 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#FFBAC8]/15 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm whitespace-nowrap mx-auto md:mx-0"
+>
+  <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2d3a35]">
+    See what's in orbit
+  </span>
+    
+    <div className="relative w-9 h-9 flex items-center justify-center bg-[#FFF8F4] rounded-full border border-[#FFE8E0] transition-transform group-hover:rotate-12">
+      <svg viewBox="0 0 24 24" className="w-5 h-5 z-10 overflow-visible">
+        <defs>
+          <mask id="bite-mask">
+            <rect width="24" height="24" fill="white" />
+            <circle cx="20" cy="4" r="5" fill="black" className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            <circle cx="17" cy="8" r="4" fill="black" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75" />
+          </mask>
+        </defs>
+        <g mask="url(#bite-mask)">
+          <path d="M20.5 3.5C20.5 3.5 16.5 3.5 13.5 6.5C10.5 9.5 5.5 19.5 5.5 19.5C5.5 19.5 15.5 14.5 18.5 11.5C21.5 8.5 21.5 4.5 21.5 4.5L20.5 3.5Z" fill="#FB8C00" />
+          <path d="M19.5 4.5L21.5 1.5M19.5 4.5L16.5 2.5M19.5 4.5L20.5 6.5" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" />
+        </g>
+      </svg>
+    </div>
+  </button>
+</div>
+</div>
+   
+{/* RIGHT: Bunny Orbit System */}
+<div className="flex-1 flex items-center justify-center md:justify-end w-full">
+  <BunnyOrbitSystem />
+</div>
       </div>
 
       <style jsx global>{`
@@ -201,7 +175,7 @@ export default function Hero() {
           font-family: 'DM Serif Display', serif;
           text-shadow: 1px 1px 0px rgba(255,255,255,0.9);
         }
-        
+    
         @keyframes bunny-bob {
           0%, 100% { transform: translate(-50%, -38%) translateY(0) rotate(-0.5deg); }
           50% { transform: translate(-50%, -38%) translateY(-8px) rotate(0.5deg); }
@@ -240,20 +214,34 @@ export default function Hero() {
         .animate-float-planet { animation: float-planet 8s ease-in-out infinite; }
         .animate-float-planet-slow { animation: float-planet 10s ease-in-out infinite; }
 
-        @keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+        @keyframes dot-twinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.3); }
 }
-
+.animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+        @keyframes twinkle {
+         0%, 100% { opacity: 0.3; }
+         50% { opacity: 1; }
+        }
+        if (Math.random() < 0.015) {
+          const edge = Math.floor(Math.random() * 4);
+          let ex, ey;
+          if (edge === 0) { ex = Math.random() * SIM_WIDTH; ey = 2; }
+          else if (edge === 1) { ex = Math.random() * SIM_WIDTH; ey = SIM_HEIGHT - 2; }
+          else if (edge === 2) { ex = 2; ey = Math.random() * SIM_HEIGHT; }
+          else { ex = SIM_WIDTH - 2; ey = Math.random() * SIM_HEIGHT; }
+          ripple(ex, ey, AMBIENT_STRENGTH * 0.8, AMBIENT_RADIUS * 1.5);
+          }
         .animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
       `}</style>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   BUNNY ORBIT SYSTEM
-═══════════════════════════════════════════════════════════════════════════ */
+<filter id="water-warp" x="-10%" y="-50%" width="200%" height="200%">
+  <feTurbulence type="turbulence" baseFrequency="0.02 0.15" numOctaves="2" seed="4" result="noise" />
+  <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" xChannelSelector="R" yChannelSelector="A" />
+</filter>
 
 function BunnyOrbitSystem() {
   return (
@@ -262,24 +250,11 @@ function BunnyOrbitSystem() {
   {/* Cosmic Layer */}
 <div className="pointer-events-none absolute inset-0 z-[25]">
 
-
 </div>
-
-
-      {/* Grass platform */}
-      <div className="absolute bottom-[22%] left-1/2 -translate-x-1/2 w-[72%] h-[18%] rounded-[100%] bg-gradient-to-b from-[#8fae99] to-[#7abc72]/75 border-2 border-[#367e2e]/10 shadow-xl z-[10]">
-        <div className="absolute top-4 left-[46%] text-md opacity-70 animate-sway">🌱</div>
-        <div className="absolute -top-1 left-[78%] text-sm opacity-70 animate-sway">🌱</div>
-        <div className="absolute top-8 right-[70%] text-lg opacity-70 animate-sway">🌱</div>
-        <div className="absolute top-7 left-[70%] text-lg opacity-70 animate-sway">🌱</div>
-        <div className="absolute top-7 left-[70%] text-lg opacity-70 animate-sway">🌱</div>
-        <div className="absolute -top-1 right-[78%] text-sm opacity-70 animate-sway">🌱</div>
-      </div>
-
       {/* BUNNY */}
-      <div className="absolute left-1/2 bottom-[22%] -translate-x-1/2 translate-y-[-38%] z-20 bunny-bob">
+      <div id="bunny-anchor" className="absolute left-1/2 bottom-[0%] -translate-x-1/2 translate-y-[-38%] z-20 bunny-bob">
         <div 
-          className="relative w-32 h-32 md:w-36 md:h-36 hover:scale-105 transition-transform cursor-pointer"
+          className="className=relative w-56 h-56 md:w-72 md:h-72 hover:scale-105 transition-transform cursor-pointer"
           style={{ filter: 'drop-shadow(0 14px 28px rgba(0,0,0,0.18))' }}
         >
           <Image 
@@ -287,30 +262,29 @@ function BunnyOrbitSystem() {
             alt="Bunny on moon" 
             fill 
             className="object-contain"
-            style={{ filter: 'contrast(1.2) saturate(0.75)' }}
+            style={{ filter: 'contrast(1.2) saturate(0.95)' }}
             priority 
           />
-          <div 
-            className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[70%] h-[18%] rounded-full"
-            style={{
-              background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.25), transparent 75%)',
-              filter: 'blur(5px)',
-              zIndex: -1,
-            }}
+        </div>
+        </div>
+      {/* BUNNY */}
+    <div className="absolute left-[42%]
+     bottom-[-15%] md:bottom-[-35%]
+       -translate-x-1/2 translate-y-[-50%] z-[2] opacity-25" style={{ transform: 'scaleY(-1) translateX(-50%)', filter: 'blur(2px)' }}>
+       <div className="relative w-56 h-56 md:w-72 md:h-72" style={{ filter: 'url(#water-warp)' }}>
+          <Image 
+            src="/bunny-moon.png" 
+            alt="Bunny on moon" 
+            fill 
+            className="object-contain"
+            style={{ filter: 'contrast(1.2) saturate(0.95)' }}
+            priority 
           />
         </div>
       </div>
-
-      {/* Decorations */}
-      <div className="absolute top-[42%] left-[25%] animate-float-slow z-[15]"><span className="text-xl">🥕</span></div>
-      <div className="absolute top-[52%] right-[25%] animate-float-slower rotate-12 z-[15]"><span className="text-xl">🥕</span></div>
-      <div className="absolute bottom-[32%] left-[32%] text-md opacity-80 animate-float-slower z-[15]">🌼</div>
-      <div className="absolute bottom-[25%] left-[38%] text-xl opacity-80 animate-float-slower z-[15]">🌼</div>
-      <div className="absolute bottom-[28%] left-[23%] text-lg opacity-80 animate-float-slower z-[15]">🌼</div>
-      <div className="absolute bottom-[28%] right-[23%] text-lg opacity-80 animate-float-slower z-[15]">🌼</div>
-      <div className="absolute bottom-[32%] right-[32%] text-md opacity-80 animate-float-slower z-[15]">🌼</div>
-      <div className="absolute bottom-[25%] right-[38%] text-xl opacity-80 animate-float-slower z-[15]">🌼</div>
-    </div>
+       </div>
+       
+    
   );
 }
 
@@ -329,12 +303,12 @@ function ZenWaterPhysics() {
     if (!ctx) return;
 
     // Physics constants
-    const WAVE_SPEED = 0.32;
-    const DAMPING = 0.989;
-    const TENSION = 0.022;
+    const WAVE_SPEED = 0.02;
+    const DAMPING = .994;
+    const TENSION = 3;
     const AMBIENT_STRENGTH = 10;
     const AMBIENT_RADIUS = 5;
-    const MOUSE_STRENGTH = 14;
+    const MOUSE_STRENGTH = 6;
     const MOUSE_RADIUS = 4;
 
     // Grid will adapt to screen aspect ratio
@@ -380,7 +354,7 @@ function ZenWaterPhysics() {
 
       // MATCH grid aspect ratio to screen (keeps ripples circular!)
       const aspect = displayWidth / displayHeight;
-      const base = 180;
+      const base = 380;
       
       if (aspect >= 1) {
         SIM_WIDTH = Math.round(base * aspect);
@@ -392,17 +366,26 @@ function ZenWaterPhysics() {
       
       initBuffers();
 
-      // Island matches bunny position
-      const mobile = window.innerWidth < 768;
-      if (mobile) {
-        islandX = SIM_WIDTH * 0.50;
-        islandY = SIM_HEIGHT * 0.7;
-        islandR = Math.min(SIM_WIDTH, SIM_HEIGHT) * 0.09;
+     // island follows bunny position
+    const bunny = document.getElementById('bunny-anchor');
+    const canvasRect = canvas.getBoundingClientRect();
+
+    if (bunny) {
+       const b = bunny.getBoundingClientRect();
+      // center of the bunny, relative to the canvas
+      const cx = (b.left + b.width / 2) - canvasRect.left;
+      const cy = (b.top + b.height / 2) - canvasRect.top;
+
+      // convert from pixels → simulation grid coords
+      islandX = (cx / displayWidth) * SIM_WIDTH;
+      islandY = (cy / displayHeight) * SIM_HEIGHT;
+      islandR = Math.min(SIM_WIDTH, SIM_HEIGHT) * 0.10;
       } else {
-        islandX = SIM_WIDTH * 0.74;
-        islandY = SIM_HEIGHT * 0.48;
-        islandR = Math.min(SIM_WIDTH, SIM_HEIGHT) * 0.08;
-      }
+        // fallback if not found
+          islandX = SIM_WIDTH * 0.74;
+          islandY = SIM_HEIGHT * 0.48;
+          islandR = Math.min(SIM_WIDTH, SIM_HEIGHT) * 0.10;
+        }
     };
 
     const ripple = (x: number, y: number, str: number, rad: number) => {
@@ -458,7 +441,7 @@ function ZenWaterPhysics() {
 
     const render = () => {
       ctx.clearRect(0, 0, displayWidth, displayHeight);
-      
+
       const h = bufferIdx === 0 ? heightA : heightB;
       const d = imageData.data;
 
@@ -470,12 +453,11 @@ function ZenWaterPhysics() {
           
           const toI = Math.sqrt((x - islandX) ** 2 + (y - islandY) ** 2);
           
-          if (toI < islandR * 1.1) {
+        if (toI < islandR * 1.1) {
             d[p + 3] = 0;
             continue;
           }
-          
-          if (Math.abs(v) < 0.08) {
+          if (Math.abs(v) < 0.10) {
             d[p + 3] = 0;
             continue;
           }
@@ -485,23 +467,29 @@ function ZenWaterPhysics() {
           const hU = y > 0 ? h[i - SIM_WIDTH] : v;
           const hD = y < SIM_HEIGHT - 1 ? h[i + SIM_WIDTH] : v;
           
-          const light = (-(hR - hL) - (hD - hU)) * 12;
-          const t = Math.max(0, Math.min(1, (light + 35) / 70));
-          
-          d[p] = (198 + t * 47) | 0;
-          d[p + 1] = (165 + t * 55) | 0;
-          d[p + 2] = (215 + t * 30) | 0;
+         const light = Math.max(-55, Math.min(55, (-(hR - hL) - (hD - hU)) * 12));
+          const edgeIntensity = Math.min(1, Math.pow(Math.max(0, Math.abs(light) - 38) / 20, 2.2));
+// base water color (soft blue, unaffected by edges)
 
-          let a = Math.abs(v) * 16 + Math.abs(light) * 0.6;
-          
-          const fs = islandR * 1.1;
-          const fe = islandR * 2.2;
-          if (toI < fe) {
-            const ft = Math.max(0, (toI - fs) / (fe - fs));
-            a *= ft * ft;
-          }
-          
-          d[p + 3] = Math.min(80, a) | 0;
+const baseR = 150, baseG = 210, baseB = 225;
+
+
+// push hard toward pure white as edgeIntensity rises
+d[p]     = (baseR + edgeIntensity * (255 - baseR)) | 0;
+d[p + 1] = (baseG + edgeIntensity * (255 - baseG)) | 0;
+d[p + 2] = (baseB + edgeIntensity * (255 - baseB)) | 0;
+
+let a = Math.abs(v) * 16 + edgeIntensity * 70;
+
+
+const fs = islandR * 1.1;
+const fe = islandR * 2.2;
+if (toI < fe) {
+  const ft = Math.max(0, (toI - fs) / (fe - fs));
+  a *= ft * ft;
+}
+
+d[p + 3] = Math.min(100,a) | 0;
         }
       }
 
@@ -509,32 +497,60 @@ function ZenWaterPhysics() {
       const oc = off.getContext('2d')!;
       oc.putImageData(imageData, 0, 0);
       
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = 'high';
+      ctx.imageSmoothingEnabled = false
+      ctx.imageSmoothingQuality = 'low'
       ctx.drawImage(off, 0, 0, displayWidth, displayHeight);
     };
 
-    
-    const animate = () => {
-      // Continuous staggered ripples (no sudden bursts!)
-      phase += 0.012;
-      if (Math.random() < 0.03) {
-        const ang = phase + Math.random() * 0.6;
-        const dist = islandR * 1.35 + Math.random() * 6;
-        ripple(
-          islandX + Math.cos(ang) * dist,
-          islandY + Math.sin(ang) * dist,
-          AMBIENT_STRENGTH * (0.5 + Math.random() * 0.5),
-          AMBIENT_RADIUS
-        );
-      }
-      
-      simulate();
-      simulate();
-      render();
-      
-      animationId = requestAnimationFrame(animate);
-    };
+    let pendingRipples: { x: number; y: number; str: number; rad: number; age: number }[] = [];
+
+const queueRipple = (x: number, y: number, str: number, rad: number) => {
+  pendingRipples.push({ x, y, str, rad, age: 0 });
+};
+
+const processPendingRipples = () => {
+  const RAMP_FRAMES = 8;
+  pendingRipples = pendingRipples.filter(r => {
+    ripple(r.x, r.y, r.str / RAMP_FRAMES, r.rad);
+    r.age++;
+    return r.age < RAMP_FRAMES;
+  });
+};
+   const animate = () => {
+  phase += 0.01;
+
+  // keep rotating sources as direct ripple() — these are already smooth/continuous
+  const ang = phase;
+  const dist = islandR * 1.4;
+  ripple(islandX + Math.cos(ang) * dist, islandY + Math.sin(ang) * dist, AMBIENT_STRENGTH * 0.4, AMBIENT_RADIUS);
+
+  const ang2 = phase * 1.3 + Math.PI;
+  const dist2 = islandR * 1.6;
+  ripple(islandX + Math.cos(ang2) * dist2, islandY + Math.sin(ang2) * dist2, AMBIENT_STRENGTH * 0.25, AMBIENT_RADIUS);
+
+  // these were the "poppy" ones — now ramp in instead
+  if (Math.random() < 0.03) {
+    const ang3 = Math.random() * Math.PI * 2;
+    const dist3 = islandR * 1.3 + Math.random() * 10;
+    queueRipple(islandX + Math.cos(ang3) * dist3, islandY + Math.sin(ang3) * dist3, AMBIENT_STRENGTH * 0.6, AMBIENT_RADIUS);
+  }
+
+  if (Math.random() < 0.02) {
+    const edge = Math.floor(Math.random() * 4);
+    let ex, ey;
+    if (edge === 0) { ex = Math.random() * SIM_WIDTH; ey = 2; }
+    else if (edge === 1) { ex = Math.random() * SIM_WIDTH; ey = SIM_HEIGHT - 2; }
+    else if (edge === 2) { ex = 2; ey = Math.random() * SIM_HEIGHT; }
+    else { ex = SIM_WIDTH - 2; ey = Math.random() * SIM_HEIGHT; }
+    queueRipple(ex, ey, AMBIENT_STRENGTH * 0.4, AMBIENT_RADIUS * 3);
+  }
+
+  processPendingRipples();
+  simulate();
+  simulate();
+  render();
+  animationId = requestAnimationFrame(animate);
+};
 
     const onMouse = (e: MouseEvent) => {
       const r = canvas.getBoundingClientRect();
@@ -559,18 +575,39 @@ function ZenWaterPhysics() {
       if (toI > islandR * 1.3) ripple(sx, sy, MOUSE_STRENGTH, MOUSE_RADIUS);
     };
 
-    resize();
-    
-    // Initial ripples
-    for (let i = 0; i < 6; i++) {
-      const a = (i / 6) * Math.PI * 2;
-      ripple(
-        islandX + Math.cos(a) * islandR * 1.4,
-        islandY + Math.sin(a) * islandR * 1.4,
-        AMBIENT_STRENGTH * 0.7,
-        AMBIENT_RADIUS
-      );
-    }
+   resize();
+
+for (let i = 0; i < 6; i++) {
+  const a = (i / 6) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
+  const dist = islandR * (1.3 + Math.random() * 0.6);
+  ripple(
+    islandX + Math.cos(a) * dist,
+    islandY + Math.sin(a) * dist,
+    AMBIENT_STRENGTH * (0.5 + Math.random() * 0.6),
+    AMBIENT_RADIUS
+  );
+  // stagger how much each has already spread
+  const headStart = Math.floor(Math.random() * 30);
+  for (let s = 0; s < headStart; s++) simulate();
+}
+
+// Fast-forward the pond so it looks "already going" instead of just-dropped-in
+for (let i = 0; i < 120; i++) {
+  // occasionally add a new ambient ripple as it fast-forwards, same as animate() does
+  if (Math.random() < 0.03) {
+    const ang = Math.random() * Math.PI * 2;
+    const dist = islandR * 1.35 + Math.random() * 6;
+    ripple(
+      islandX + Math.cos(ang) * dist,
+      islandY + Math.sin(ang) * dist,
+      AMBIENT_STRENGTH * (0.5 + Math.random() * 0.5),
+      AMBIENT_RADIUS
+    );
+  }
+  simulate();
+}
+
+render();
     
     canvas.addEventListener('mousemove', onMouse);
     canvas.addEventListener('touchmove', onTouch, { passive: true });
@@ -613,11 +650,11 @@ function Star({ top, left, size, color, delay, glow = false }: {
         left: `${left}%`,
         width: `${size}px`,
         height: `${size}px`,
-        animation: `twinkle 3s ease-in-out infinite`,
+        animation: `dot-twinkle 2.8s ease-in-out infinite`,
         animationDelay: `${delay}s`,
         filter: glow
-          ? `drop-shadow(0 0 ${size / 5}px ${color})`
-          : `drop-shadow(0 0 ${size / 4}px rgba(0,0,0,0.4))`,
+          ? `drop-shadow(0 0 ${size / 2}px ${color}) drop-shadow(0 0 ${size / 4}px white)`
+          : `drop-shadow(0 0 ${size / 5}px ${color})`,
         zIndex: 1,
       }}
     >
