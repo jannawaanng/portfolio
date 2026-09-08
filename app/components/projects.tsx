@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Siemens",
     subtitle:
       "Driving AI and customer-support transformation across enterprise service operations.",
-    timeline: "2026 — Now",
+    timeline: "2026",
     image: "/siemens-hero.jpg",
     slug: "siemens",
     tag: "Product · AI",
