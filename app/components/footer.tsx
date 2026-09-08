@@ -92,7 +92,7 @@ function GhostPill({ href, label, children }: GhostPillProps) {
       {...(external
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}
-      className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition-colors hover:border-white/40 hover:text-white"
+      className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-[#000028]/80 transition-colors hover:border-white/40 hover:text-white"
     >
       {children}
     </a>
