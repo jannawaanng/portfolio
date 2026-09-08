@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/navbar";
 import "./globals.css";
 import HeroPlanet from "./components/hero";
-import BackToTop from "./components/backToTop";
 import Footer from "./components/footer";
 import FooterWrapper from "./components/footerWrapper";
 
@@ -33,7 +32,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
   <Navbar />
-      <BackToTop />
         {children}
         <FooterWrapper />
       </body>

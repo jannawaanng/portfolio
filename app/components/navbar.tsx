@@ -2,87 +2,71 @@ import Link from "next/link";
 import { Linkedin } from "lucide-react";
 
 const NAV_LINKS = [
-  { href: "/pages/about-me", label: "About Me!", isExternal: false },
-  { href: "/pages/resume", label: "Resume", isExternal: false }, 
+  { href: "/#projects", label: "Work", isExternal: false },
+  { href: "/pages/about-me", label: "About", isExternal: false },
+  { href: "/pages/resume", label: "Resume", isExternal: false },
   { href: "mailto:janna.wang@duke.edu", label: "Contact", isExternal: true },
 ];
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="mx-auto max-w-6xl px-4 md:px-6 py-3 flex justify-center">
+    <nav className="fixed top-0 left-0 z-50 w-full">
+      <div className="mx-auto flex max-w-6xl justify-center px-4 py-4 md:px-6">
         <div
           className="
-            flex items-center gap-3 md:gap-6
-            w-full md:w-auto
+            flex items-center gap-1
             rounded-full
-            bg-[#f9f2e1]
-            border border-[#E3DAD0]
-            shadow-[0_10px_28px_rgba(30,20,20,.1)]
-            px-4 md:px-6
-            min-h-[3rem]
+            bg-[#f9f2e1]/95 backdrop-blur-md
+            border border-[#EAE1D4]
+            shadow-[0_8px_24px_-8px_rgba(40,30,20,0.18)]
+            pl-4 pr-2 py-1.5
           "
         >
           {/* LOGO */}
           <Link
             href="/"
-            className="flex items-center gap-2 group cursor-pointer"
             aria-label="Back to homepage"
+            className="group mr-2 flex items-center"
           >
             <img
               src="/logo.jpg"
-              alt="Janna logo"
-              className="
-                h-8 w-auto object-contain
-                transition-transform duration-200 ease-out
-                group-hover:-translate-y-[2px] group-hover:scale-[1.05]
-              "
-            />
+              alt="Janna"
+              className="h-8 w-auto object-contain opacity-90 transition-transform duration-200 ease-out group-hover:scale-105" />
           </Link>
 
           {/* LINKS */}
-          <div className="flex flex-1 items-center justify-center flex-wrap gap-3 md:gap-5 text-[13px] text-[#4A6A61]">
-            {NAV_LINKS.map((item) => (
-              item.isExternal ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full hover:bg-white transition-all duration-200 hover:text-[#203237]"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#F7D18F]" />
-                  <span>{item.label}</span>
+          <div className="flex items-center gap-0.5">
+            {NAV_LINKS.map((item) => {
+              const cls =
+                "rounded-full px-3.5 py-1.5 text-[13px] font-medium text-[#4A6A61] transition-colors duration-200 hover:text-[#1B2E29] hover:bg-white/70";
+              return item.isExternal ? (
+                <a key={item.href} href={item.href} className={cls}>
+                  {item.label}
                 </a>
               ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full hover:bg-white transition-all duration-200 hover:text-[#203237]"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#F7D18F]" />
-                  <span>{item.label}</span>
+                <Link key={item.href} href={item.href} className={cls}>
+                  {item.label}
                 </Link>
-              )
-            ))}
+              );
+            })}
           </div>
 
-          {/* LINKEDIN ICON */}
+          {/* DIVIDER */}
+          <span className="mx-1 h-4 w-px bg-[#E0D6C8]" aria-hidden="true" />
+
+          {/* LINKEDIN */}
           <a
-            href="https://linkedin.com/in/jannawang2005" 
+            href="https://linkedin.com/in/jannawang2005"
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              inline-flex items-center justify-center
-              h-8 w-8 rounded-full
-              border border-[#D4CFC4]/70
-              bg-white/90
-              text-[#5C7A6F] hover:text-[#203237]
-              hover:bg-white
-              hover:shadow-[0_6px_16px_rgba(32,50,55,0.12)]
-              transition-all duration-200
-            "
             aria-label="LinkedIn profile"
+            className="
+              flex h-8 w-8 items-center justify-center rounded-full
+              text-[#4A6A61] transition-colors duration-200
+              hover:bg-white/70 hover:text-[#1B2E29]
+            "
           >
-            <Linkedin size={16} strokeWidth={1.6} />
+            <Linkedin size={16} strokeWidth={1.75} />
           </a>
         </div>
       </div>
