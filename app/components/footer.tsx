@@ -75,19 +75,30 @@ export default function Footer() {
   );
 }
 
-function GhostPill({ href, label, children }) {
+
+type GhostPillProps = {
+  href: string;
+  label?: string;
+  children: React.ReactNode;
+};
+
+function GhostPill({ href, label, children }: GhostPillProps) {
   const external = href.startsWith("http");
+
   return (
     <a
       href={href}
       aria-label={label}
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-[#26303A]/20 text-[#26303A]/80 transition hover:border-[#3E7C8C] hover:text-[#3E7C8C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3E7C8C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#EAF1F3]"
+      {...(external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
+      className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/80 transition-colors hover:border-white/40 hover:text-white"
     >
       {children}
     </a>
   );
 }
+
 
 // Small 4-point star — clean, on-theme, replaces the comet. Scales via className.
 function Star({ className = "" }) {
