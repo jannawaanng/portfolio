@@ -18,13 +18,13 @@ export default function Footer() {
       }}
     >
       {/* delicate constellations in soft ink — texture, not clutter */}
-      <Constellation className="pointer-events-none absolute left-6 top-10 w-32 opacity-40 md:left-14" />
-      <Constellation className="pointer-events-none absolute right-8 bottom-16 w-24 opacity-30 -scale-x-100 md:right-16" />
+      <Constellation className="pointer-events-none absolute left-6 top-6 w-24 opacity-40 md:left-14" />
+      <Constellation className="pointer-events-none absolute right-8 bottom-10 w-20 opacity-30 -scale-x-100 md:right-16" />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-8 md:px-12">
+      <div className="relative mx-auto max-w-6xl px-6 pt-10 pb-6 md:px-12">
         {/* TOP ROW: sign-off label left, ghost actions right */}
-        <div className="flex items-start justify-between gap-6">
-          <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#3E7C8C]">
+        <div className="flex items-start justify-between gap-4">
+          <p className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#3E7C8C]">
             <Star className="h-3 w-3" /> End of transmission
           </p>
 
@@ -45,14 +45,14 @@ export default function Footer() {
         </div>
 
         {/* HERO: one serif line. email is the single teal pop, inline. */}
-        <div className="mt-10 max-w-5xl">
-          <h2 className="font-serif text-[36px] font-light leading-[1.04] tracking-tight text-[#1F2A33] md:text-[58px]">
+        <div className="mt-3 max-w-5xl">
+          <h2 className="font-serif text-[20px] font-light leading-[1.04] tracking-tight text-[#1F2A33] md:text-[24px]">
             You&apos;ve reached the edge of my galaxy.
           </h2>
 
           <a
             href="mailto:you@email.com"
-            className="group mt-6 inline-flex items-baseline gap-2 text-lg font-medium text-[#2E6E7E] transition hover:text-[#3E7C8C] md:text-xl"
+            className="group mt-6 inline-flex items-baseline gap-2 text-sm font-medium text-[#2E6E7E] transition hover:text-[#3E7C8C] md:text-md"
           >
             Let&apos;s build something —
             <span className="underline decoration-[#2E6E7E]/30 underline-offset-4 transition group-hover:decoration-[#3E7C8C]">
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         {/* META RAIL: status + credit, one full-width baseline */}
-        <div className="mt-16 flex flex-col gap-3 border-t border-[#26303A]/12 pt-6 text-xs text-[#26303A]/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-[#26303A]/12 pt-6 text-xs text-[#26303A]/60 sm:flex-row sm:items-center sm:justify-between">
           <span className="inline-flex items-center gap-2 text-[#26303A]/75">
             <span className="h-1.5 w-1.5 rounded-full bg-[#3E7C8C]" />
             Senior @ Duke · Grad Spring 2027

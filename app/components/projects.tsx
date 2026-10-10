@@ -24,7 +24,7 @@ const projects: Project[] = [
     timeline: "2026",
     image: "/siemens-hero.jpg",
     slug: "siemens",
-    tag: "Product · AI",
+    tag: " Internship  |  Product · AI",
   },
   {
     title: "Amgen",
@@ -33,7 +33,7 @@ const projects: Project[] = [
     timeline: "2025",
     image: "/amgen-logo-expand.png",
     slug: "amgen-ops",
-    tag: "Data · Ops",
+    tag: "Internship  |  Data · Ops",
   },
   {
     title: "Unlocked Maps",
